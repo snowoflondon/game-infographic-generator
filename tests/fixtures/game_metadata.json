@@ -1,0 +1,51 @@
+{
+  "title": "Persona 5 Royal",
+  "alternative_titles": [
+    "ペルソナ5 ザ・ロイヤル"
+  ],
+  "developer": "P-Studio",
+  "publisher": "Atlus",
+  "release_date": "2019-10-31",
+  "genres": [
+    "JRPG",
+    "Social Simulation"
+  ],
+  "platforms": [
+    "PlayStation 4",
+    "PlayStation 5",
+    "PC",
+    "Nintendo Switch"
+  ],
+  "description": "A role-playing game combining dungeon exploration, turn-based combat, and social simulation.",
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 95,
+      "max_score": 100,
+      "platform": "PlayStation 4",
+      "url": null
+    }
+  ],
+  "player_sentiment": {
+    "summary": "Players frequently praise the characters, soundtrack, and stylish presentation.",
+    "positives": [
+      "Memorable characters",
+      "Excellent soundtrack",
+      "Stylish presentation"
+    ],
+    "negatives": [
+      "Very long playtime",
+      "Slow introductory pacing"
+    ]
+  },
+  "similar_games": [
+    "Persona 3 Reload",
+    "Metaphor: ReFantazio"
+  ],
+  "sources": [
+    {
+      "name": "Official publisher website",
+      "url": null
+    }
+  ]
+}
