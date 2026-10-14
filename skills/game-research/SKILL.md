@@ -10,6 +10,18 @@ description: Research a user-defined video game using available research tools a
 Given a video game title, research the game and produce a structured JSON file.
 Use this skill when researching game metadata for an infographic.
 
+## Schema Development vs. Game Research
+
+- **Intentional schema development:** The JSON contract in this document
+  (Schema Rules and Output Format) is authoritative. When the user requests a
+  contract change, update these rules first, then align the Pydantic models,
+  fixtures, and tests. Do not infer new constraints from example values alone.
+- **Game research:** The existing Pydantic model is authoritative for runtime
+  validation. Follow this contract when generating output, but never modify
+  Pydantic models or the validator just to make generated JSON pass. If the
+  contract and implementation disagree, report the mismatch as a development
+  task rather than silently changing either during research.
+
 ## Prerequisites
 
 Inspect `GameMetadata` and its nested models in
@@ -40,8 +52,7 @@ or validator as part of this research skill.
 
 ## Output Format
 
-The following structure is illustrative; the existing `GameMetadata` model is
-authoritative if its fields or types differ.
+The following example illustrates the contract defined by Schema Rules below.
 
 ```json
 {
@@ -100,16 +111,60 @@ authoritative if its fields or types differ.
 This is an illustrative example, not a verified research result. Replace
 placeholder source URLs with real, verified links during research.
 
+## Schema Rules
+
+The root is a JSON object for one game edition. Research output must include
+**every top-level field** listed below, even when information is unknown.
+For runtime loading, omitted optional fields receive the listed defaults;
+this tolerance does not permit the research agent to omit output fields.
+
+| Field | JSON type | Required on load / default |
+| --- | --- | --- |
+| `title` | nonempty string | Required; no default; not nullable |
+| `alternative_titles` | array of strings | Optional; `[]` |
+| `developer` | string or null | Optional; `null` |
+| `publisher` | string or null | Optional; `null` |
+| `release_date` | date string or null | Optional; `null` |
+| `genres` | array of strings | Optional; `[]` |
+| `platforms` | array of strings | Optional; `[]` |
+| `description` | string or null | Optional; `null` |
+| `critic_scores` | array of critic score objects | Optional; `[]` |
+| `player_sentiment` | sentiment object or null | Optional; `null` |
+| `similar_games` | array of strings | Optional; `[]` |
+| `sources` | array of source objects | Optional; `[]` |
+
+Nested structures:
+
+- **Critic score:** Required nonempty strings `source` and `platform`, required
+  integers `score` and `max_score`, and optional string-or-null `url` (default
+  `null`). Require `0 <= score <= max_score` and `max_score > 0`.
+- **Sentiment:** Optional string-or-null `summary` (default `null`), and optional
+  string arrays `positives` and `negatives` (each defaults to `[]`). Use `null`
+  for wholly unknown sentiment, or an object for available sentiment.
+- **Source:** Required nonempty string `name` and optional string-or-null `url`
+  (default `null`).
+
+Shared constraints:
+
+- Reject unexpected fields at the root and in every nested object.
+- Arrays are not nullable; their elements must match the declared type and may
+  not be `null`. Each array defaults independently to an empty list.
+- Types are strict: do not coerce numbers or booleans into strings, or numeric
+  strings, booleans, or fractional numbers into integer scores.
+- Dates must be real calendar dates encoded as `YYYY-MM-DD`; reject timestamps
+  and numeric epochs. Python callers may also supply a `date` instance.
+- Required nonempty strings have minimum length one. Other strings have no
+  additional length constraint. URLs are optional strings at the schema level;
+  factual accuracy and URL validity/reachability are research responsibilities.
+
 ### Output Rules
 
 - The saved file must contain valid JSON, without Markdown fences or commentary.
 - Follow the existing `GameMetadata` Pydantic model; do not include unsupported
   fields.
-- Only `title` is required at the top level. Unknown `player_sentiment` may be
-  `null`; a supplied object defaults its summary to `null` and lists to `[]`.
-  Each critic score requires `source`, `score`, `max_score`, and `platform`;
-  each source requires `name`. URLs are optional strings in the schema but
-  researched claims still require verified links.
+- Include all top-level fields from Schema Rules. Use `null` for unknown
+  nullable values (including `player_sentiment`) and `[]` for unknown lists.
+  Researched claims still require verified links.
 - Scores and maxima must be integers, not numeric strings; scores must be
   nonnegative and no greater than the positive maximum. If a source uses
   fractional scores that cannot fit this contract, report the schema limitation

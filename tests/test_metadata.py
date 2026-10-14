@@ -14,6 +14,16 @@ from game_infographic_generator.models import (
 FIXTURE = Path(__file__).parent / "fixtures" / "game_metadata.json"
 
 
+def test_skill_example_matches_runtime_contract():
+    skill = Path(__file__).resolve().parents[1] / "skills" / "game-research" / "SKILL.md"
+    example = skill.read_text(encoding="utf-8").split("```json\n", 1)[1].split("```", 1)[0]
+    data = json.loads(example)
+    assert set(data) == set(GameMetadata.model_fields)
+    game = GameMetadata.model_validate_json(example)
+    assert json.loads(game.model_dump_json()) == data
+    assert data == json.loads(FIXTURE.read_text(encoding="utf-8"))
+
+
 @pytest.fixture
 def metadata():
     return json.loads(FIXTURE.read_text(encoding="utf-8"))
@@ -76,6 +86,14 @@ def test_reject_unexpected_fields(metadata, location):
     target["unexpected"] = "value"
     with pytest.raises(ValidationError, match="extra_forbidden"):
         GameMetadata.model_validate_json(json.dumps(metadata))
+
+
+@pytest.mark.parametrize("field", [
+    "alternative_titles", "genres", "platforms", "critic_scores", "similar_games", "sources",
+])
+def test_lists_are_not_nullable(field):
+    with pytest.raises(ValidationError):
+        GameMetadata.model_validate_json(json.dumps({"title": "Example", field: None}))
 
 
 @pytest.mark.parametrize("data", [{}, {"title": ""}])
