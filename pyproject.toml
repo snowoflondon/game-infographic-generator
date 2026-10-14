@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "game-infographic-generator"
+version = "0.1.0"
+description = "A proof of concept for generating game infographics."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["pydantic>=2,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+game-infographic-generator = "game_infographic_generator.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
