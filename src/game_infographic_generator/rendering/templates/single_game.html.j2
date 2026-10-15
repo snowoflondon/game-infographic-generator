@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><style>:root {
+--background: {{ theme.background }};
+--text-primary: {{ theme.primary }};
+--text-secondary: {{ theme.secondary }};
+--panel: {{ theme.panel }};
+--divider: {{ theme.divider }};
+--panel-positive: #edf1ec;
+--panel-critical: #f1ece7;
+--accent: {{ theme.accent }};
+--on-accent: {{ theme.on_accent }};
+}
+{{ stylesheet | safe }}</style></head>
+<body><main>
+<header><p class="eyebrow">Game / Profile</p><h1>{{ game.title }}</h1>
+{% for title in game.alternative_titles %}<p class="alternative">{{ title }}</p>{% endfor %}
+{% if game.release_date or game.genres %}<p class="subtitle">{% if game.release_date %}{{ game.release_date.year }}{% endif %}{% if game.release_date and game.genres %} · {% endif %}{% if game.genres %}{{ game.genres[0] }}{% endif %}</p>{% endif %}</header>
+{% if artwork %}<figure><img src="{{ artwork }}" alt="Provided game artwork"></figure>{% endif %}
+{% set has_metadata = game.developer or game.publisher or game.release_date or game.genres or game.platforms %}
+{% if has_metadata or game.critic_scores %}<div class="facts{% if not has_metadata or not game.critic_scores %} facts-single{% endif %}">
+{% if has_metadata %}
+<section class="metadata"><h2>At a glance</h2><dl>
+{% for label, value in [('Developer', game.developer), ('Publisher', game.publisher), ('First release', game.release_date), ('Genres', game.genres | join(' / ')), ('Platforms', game.platforms | join(' / '))] %}
+{% if value %}<div><dt>{{ label }}</dt><dd>{{ value }}</dd></div>{% endif %}{% endfor %}
+</dl></section>{% endif %}
+{% if game.critic_scores %}<section class="reception"><h2>Critical reception</h2><div class="scores">{% for review in game.critic_scores %}<article><p class="score">{{ review.score }}<span> / {{ review.max_score }}</span></p><p>{{ review.source }} · {{ review.platform }}</p></article>{% endfor %}</div></section>{% endif %}
+</div>{% endif %}
+{% set overview = presentation.overview if presentation else game.description %}
+{% if overview %}<section><h2>Overview</h2><p>{{ overview }}</p></section>{% endif %}
+{% if presentation %}
+{% if presentation.highlights or presentation.criticisms %}<section><h2>Player perspectives</h2><p class="sentiment-note">Condensed themes from sampled player opinions</p><div class="themes">
+{% for label, items in [('Highlights', presentation.highlights), ('Criticisms', presentation.criticisms)] %}{% if items %}<div class="theme-panel {{ 'highlight-panel' if loop.first else 'criticism-panel' }}"><h3>{{ label }}</h3><ul>{% for item in items %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endif %}{% endfor %}
+</div></section>{% endif %}
+{% else %}
+{% set sentiment = game.player_sentiment %}
+{% if sentiment and (sentiment.summary or sentiment.positives or sentiment.negatives) %}<section><h2>Player perspectives</h2>
+{% if sentiment.summary %}<p>{{ sentiment.summary }}</p>{% endif %}
+<div class="themes">{% for label, items in [('Positive themes', sentiment.positives), ('Points of friction', sentiment.negatives)] %}{% if items %}<div class="theme-panel {{ 'highlight-panel' if loop.first else 'criticism-panel' }}"><h3>{{ label }}</h3><ul>{% for item in items %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endif %}{% endfor %}</div></section>{% endif %}
+{% endif %}
+{% if game.similar_games %}<section><h2>Similar games</h2><p>{{ game.similar_games | join(' / ') }}</p></section>{% endif %}
+<footer><p class="brand">Game Infographic Generator</p></footer>
+</main></body></html>

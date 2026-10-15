@@ -1,0 +1,67 @@
+{
+  "title": "Stellar Blade",
+  "alternative_titles": ["스텔라 블레이드"],
+  "developer": "SHIFT UP Corporation",
+  "publisher": "Sony Interactive Entertainment",
+  "release_date": "2024-04-26",
+  "genres": ["Action", "Adventure"],
+  "platforms": ["PlayStation 5", "PC"],
+  "description": "A single-player science-fiction action adventure in which EVE explores a devastated Earth and battles the Naytiba while investigating humanity's downfall.",
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 81,
+      "max_score": 100,
+      "platform": "PlayStation 5",
+      "url": "https://www.metacritic.com/game/stellar-blade/?platform=playstation-5"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "In the two sampled Reddit discussions, players praise parrying, boss encounters, visuals, and music, while criticizing story and character writing, traversal, and some open-area pacing. Opinions on combat depth and music differ; this sample is not representative of all players.",
+    "positives": [
+      "Satisfying parries and boss encounters",
+      "Detailed science-fiction visuals and creature designs",
+      "Music praised by several participants, although opinions differ"
+    ],
+    "negatives": [
+      "Story and character writing perceived as weak",
+      "Clunky movement and platforming",
+      "Open areas and repetitive activities can interrupt pacing"
+    ]
+  },
+  "similar_games": ["NieR:Automata", "Sekiro: Shadows Die Twice"],
+  "sources": [
+    {
+      "name": "PlayStation official product page: publisher, genre, PS5 release, premise and gameplay",
+      "url": "https://www.playstation.com/en-us/games/stellar-blade/"
+    },
+    {
+      "name": "PlayStation Blog: developer announcement of original PS5 release date",
+      "url": "https://blog.playstation.com/2024/01/31/stellar-blade-arrives-only-on-ps5-april-26/"
+    },
+    {
+      "name": "Steam official listing: developer and PC availability",
+      "url": "https://store.steampowered.com/app/3489700/Stellar_Blade/"
+    },
+    {
+      "name": "PlayStation Korea: verified Korean title 스텔라 블레이드",
+      "url": "https://www.playstation.com/ko-kr/games/stellar-blade/"
+    },
+    {
+      "name": "PlayStation Japan: title remains Stellar Blade in Japanese listing",
+      "url": "https://www.playstation.com/ja-jp/games/stellar-blade/"
+    },
+    {
+      "name": "Metacritic: PlayStation 5 critic aggregate",
+      "url": "https://www.metacritic.com/game/stellar-blade/?platform=playstation-5"
+    },
+    {
+      "name": "Reddit r/soulslikes: sampled player review and discussion; sentiment and Sekiro comparison",
+      "url": "https://www.reddit.com/r/soulslikes/comments/1mvzs0b/stellar_blade_a_review_after_200_hours/"
+    },
+    {
+      "name": "Reddit r/patientgamers: contrasting player review and discussion; sentiment and NieR:Automata comparison",
+      "url": "https://www.reddit.com/r/patientgamers/comments/1paa5fu/so_i_finally_played_stellar_blade_alright_but/"
+    }
+  ]
+}

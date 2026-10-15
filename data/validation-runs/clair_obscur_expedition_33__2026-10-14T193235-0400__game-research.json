@@ -1,0 +1,59 @@
+{
+  "title": "Clair Obscur: Expedition 33",
+  "alternative_titles": [],
+  "developer": "Sandfall Interactive",
+  "publisher": "Kepler Interactive",
+  "release_date": "2025-04-24",
+  "genres": ["Turn-based RPG"],
+  "platforms": ["PlayStation 5", "Xbox Series X|S", "PC"],
+  "description": "A single-player fantasy RPG inspired by Belle Époque France. A party of expeditioners sets out to stop the Paintress from erasing people, combining turn-based decisions with real-time dodges, parries, and attacks.",
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 91,
+      "max_score": 100,
+      "platform": "PC",
+      "url": "https://www.metacritic.com/game/clair-obscur-expedition-33/critic-reviews/?platform=pc"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "In two sampled r/patientgamers discussions, players praise the hybrid combat, build experimentation, music, and dramatic premise. Opinions differ on the story's payoff, exploration, and side content. Some find repeated encounters and powerful builds undermine pacing or challenge. This limited sample is not representative of all players.",
+    "positives": [
+      "Engaging combination of turn-based strategy and real-time reactions",
+      "Creative character builds and passive ability combinations",
+      "Memorable music and an intriguing dramatic premise"
+    ],
+    "negatives": [
+      "Repetitive enemies and uneven side content for some players",
+      "Exploration and navigation can feel unrewarding or confusing",
+      "Story payoff and combat balance divide opinion"
+    ]
+  },
+  "similar_games": ["Final Fantasy VII", "Sekiro: Shadows Die Twice"],
+  "sources": [
+    {
+      "name": "Sandfall official studio page: French developer, publisher Kepler Interactive, single-player RPG genre and setting",
+      "url": "https://www.sandfall.co/"
+    },
+    {
+      "name": "Sandfall official launch retrospective: April 24, 2025 release on PS5, Xbox Series X|S and PC storefronts",
+      "url": "https://www.sandfall.co/post/clair-obscur-expedition-33-was-released-on-april-24-2025"
+    },
+    {
+      "name": "Official game site: title, premise, setting, platforms and hybrid combat",
+      "url": "https://www.expedition33.com/"
+    },
+    {
+      "name": "Metacritic: PC critic aggregate",
+      "url": "https://www.metacritic.com/game/clair-obscur-expedition-33/critic-reviews/?platform=pc"
+    },
+    {
+      "name": "Reddit r/patientgamers: positive player review and discussion; builds, combat, and interpretive Final Fantasy VII and Sekiro comparisons",
+      "url": "https://www.reddit.com/r/patientgamers/comments/1ulpbui/clair_obscur_expedition_33_a_love_letter_to_jrpgs/"
+    },
+    {
+      "name": "Reddit r/patientgamers: contrasting player review and discussion; music, combat, exploration, repetition and narrative criticisms",
+      "url": "https://www.reddit.com/r/patientgamers/comments/1wbeblu/clair_obscur_expedition_33_was_disappointing/"
+    }
+  ]
+}

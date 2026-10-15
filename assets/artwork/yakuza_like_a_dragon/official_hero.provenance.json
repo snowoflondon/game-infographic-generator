@@ -1,0 +1,15 @@
+{
+  "game": "Yakuza: Like a Dragon",
+  "edition": "Original game",
+  "source_page_url": "https://www.playstation.com/en-us/games/yakuza-like-a-dragon/",
+  "direct_image_url": "https://gmedia.playstation.com/is/image/SIEPDC/yakuza-like-a-dragon-normalhero-03-ps4-20july20-en-us?$native$",
+  "retrieved_at": "2026-10-14T21:06:08-04:00",
+  "local_filename": "official_hero.jpg",
+  "dimensions": [
+    3840,
+    1580
+  ],
+  "usage_terms_url": "https://www.playstation.com/en-us/legal/website-terms-of-use/",
+  "usage_notes": "Official promotional image used for a local personal, noncommercial validation example; no redistribution or commercial license asserted.",
+  "verification": "Linked hero artwork on the official base-game page; decoded and visually inspected before rendering."
+}

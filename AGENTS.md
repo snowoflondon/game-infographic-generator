@@ -2,21 +2,31 @@
 
 ## Project overview
 
-Build a Python application that retrieves video game metadata and generates
-portrait infographics. The repository currently contains a minimal scaffold;
-metadata retrieval and infographic rendering are not yet implemented.
+Build a Python application that validates researched game metadata and generates
+single-game portrait PNGs. Research is agent-driven through
+[game-research](skills/game-research/SKILL.md); the Python CLI validates local JSON
+and renders it. Personal rankings are future work and are not implemented.
 
 ## Tech stack
 
-- Target Python 3.11+. The scaffold currently declares Python 3.9+ in
-  `pyproject.toml` and `README.md`; align these when updating runtime support.
+- Use Python 3.11+.
 - Use Pydantic for structured data and validation, pytest for testing, and Git
   for version control.
+- Use Jinja2 and HTML/CSS for templates, with Playwright's Python API and
+  Chromium for PNG rendering, and Pillow for artwork accent extraction.
 
 ## Architecture
 
 - Separate metadata retrieval from rendering, using structured models at the
   boundary.
+- The research skill's JSON contract governs intentional schema development;
+  existing Pydantic models govern runtime validation. Never change models merely
+  to make generated research pass validation.
+- Follow [infographic-design](skills/infographic-design/SKILL.md) for rendering.
+  Preserve the 1200 × 1600 canvas and original research JSON. Artwork is optional;
+  artwork mode requires a local image and separate condensed presentation JSON.
+  Requested artwork must remain present through normal and compact layouts;
+  fail if content cannot fit, preserving any existing output PNG.
 - Keep modules small and testable, and external API integrations modular.
 - Add type hints to public functions.
 - Prefer existing dependencies and the standard library. Ask before adding

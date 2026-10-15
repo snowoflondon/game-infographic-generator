@@ -1,0 +1,51 @@
+{
+  "title": "Yakuza: Like a Dragon",
+  "alternative_titles": ["龍が如く７　光と闇の行方"],
+  "developer": "RGG Studio",
+  "publisher": "SEGA",
+  "release_date": "2020-01-16",
+  "genres": ["JRPG", "Turn-based RPG"],
+  "platforms": ["PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X|S", "PC"],
+  "description": "A role-playing game following Ichiban Kasuga as he rebuilds his life after prison and betrayal. He gathers a party of outsiders in Yokohama, battles through turn-based encounters, and explores a city filled with side stories and minigames.",
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 84,
+      "max_score": 100,
+      "platform": "PlayStation 4",
+      "url": "https://www.metacritic.com/game/yakuza-like-a-dragon/?platform=playstation-4"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "In the sampled r/patientgamers discussion, players praise the emotional story, humor, and side activities while debating slow pacing and leveling requirements. Some describe boss difficulty spikes as frustrating grind; others find the available arena and side content sufficient. This is a limited sample, not a representative player consensus.",
+    "positives": [
+      "Emotional storytelling and an engaging protagonist",
+      "Absurd humor and imaginative turn-based encounters",
+      "Enjoyable minigames, including business management"
+    ],
+    "negatives": [
+      "Slow opening and story pacing",
+      "Boss difficulty spikes that some players experience as forced grinding",
+      "Job leveling can discourage experimentation for some players"
+    ]
+  },
+  "similar_games": ["Dragon Quest XI", "Like a Dragon: Infinite Wealth"],
+  "sources": [
+    {
+      "name": "SEGA official Japanese product page: original Japanese title, original Japan PS4 release, publisher, gameplay and platform listings",
+      "url": "https://ryu-ga-gotoku.com/seven/"
+    },
+    {
+      "name": "Steam official listing: English title, RGG Studio, SEGA, PC availability, premise, jobs and side activities; bundle identifies Infinite Wealth as a related series title",
+      "url": "https://store.steampowered.com/app/1235140/Yakuza_Like_a_Dragon/"
+    },
+    {
+      "name": "Metacritic: PlayStation 4 critic aggregate and JRPG classification",
+      "url": "https://www.metacritic.com/game/yakuza-like-a-dragon/?platform=playstation-4"
+    },
+    {
+      "name": "Reddit r/patientgamers: sampled player review and discussion; sentiment and Dragon Quest XI gameplay comparison",
+      "url": "https://www.reddit.com/r/patientgamers/comments/vext4l/yakuza_like_a_dragon_is_a_phenomenal_rpg_that_i/"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "game": "Genshin Impact",
+  "edition": "Original base-game launch",
+  "source_page_url": "https://blog.playstation.com/?p=341471",
+  "direct_image_url": "https://blog.playstation.com/tachyon/2020/09/50382753728_4bd6b35aa4_k.jpg?crop_strategy=smart&resize=1088%2C612",
+  "retrieved_at": "2026-10-15T00:44:03Z",
+  "local_filename": "official_launch.jpg",
+  "format": "JPEG",
+  "width": 1088,
+  "height": 612,
+  "usage_terms_url": "https://genshin.hoyoverse.com/en-us/company/terms",
+  "legal_faq_url": "https://www.hoyolab.com/article/143107",
+  "usage_notes": "Local non-commercial POC test only. Official source retains copyright; no redistribution or commercial license asserted. Terms describe individual non-commercial enjoyment. Legal FAQ page was JavaScript-only and could not be fully inspected. Recheck rights before external publication.",
+  "verification": "Image visually inspected: Genshin Impact logo and original launch characters; JPEG fully decoded with Pillow.",
+  "accent": "#183858"
+}

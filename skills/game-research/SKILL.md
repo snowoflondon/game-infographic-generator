@@ -41,6 +41,7 @@ or validator as part of this research skill.
    Open supporting pages rather than relying only on search snippets. If tools
    or sources are unavailable, report the limitation rather than inventing data.
 3. Prefer official developer/publisher sources for factual details.
+   Research original-language alternative titles using the rule below.
 4. Use reputable review aggregators for scores, checking the edition and platform.
 5. Distinguish facts from player opinions. Summarize sentiment from actual
    community discussions without implying that a small sample is universal.
@@ -172,14 +173,35 @@ Shared constraints:
 - Use `null` for unknown optional scalar fields and empty arrays for unknown list
   fields where allowed by the model. Report unavailable required data rather
   than inventing values to satisfy validation.
-- Use ISO 8601 dates (`YYYY-MM-DD`). Use the original release date of the specified
-  game edition unless otherwise requested; identify its region in the report
-  when release dates vary by region.
+- Use ISO 8601 dates (`YYYY-MM-DD`). Unless otherwise requested, `release_date`
+  is the earliest official full public release of the specified game edition
+  across all platforms and regions. Exclude demos, closed/open betas, technical
+  tests, and early access. Treat remakes, remasters, and distinct editions
+  separately; do not substitute the original game's release date for theirs.
+  Identify the platform and region of the selected release in the report and
+  include supporting sources. The `platforms` list is independent of this date
+  and does not imply simultaneous release on every listed platform. If the
+  earliest qualifying date cannot be verified, use `null` and report the gap.
 - Associate review scores with their specific platform and source, preserving
   the source's score scale.
 - Never invent review scores or source URLs.
 - Summarize player sentiment from actual community discussions, not assumptions.
-- Preserve Japanese titles where available.
+- For games with a Japanese, Korean, or Chinese publisher, include verified
+  titles in that publisher's respective language in `alternative_titles` when
+  available. Also check the originating developer/studio's language when it is
+  Japanese, Korean, or Chinese: publisher nationality alone does not establish
+  a game's original language (for example, Korean-developed Stellar Blade has
+  a Japanese publisher). Preserve verified original-language titles even when
+  the publisher is based elsewhere.
+- Use official developer/publisher pages or regional storefronts as evidence.
+  Preserve Japanese, Hangul, and simplified/traditional Chinese spellings as
+  published; do not translate or transliterate titles yourself. Include only
+  titles for the same game edition, remove duplicates, and omit spellings
+  identical to `title`. Do not collect unrelated regional localizations.
+- If no distinct original-language title can be verified, keep
+  `alternative_titles: []` (not an empty string or `null`) and mention the gap.
+  For ambiguous multinational origins, report uncertainty rather than guessing.
+  This is a research requirement; the runtime type remains `list[str]`.
 - Include source URLs for researched claims using the model's supported source
   fields. Explain claim-to-source associations in the report if the model cannot
   express them.

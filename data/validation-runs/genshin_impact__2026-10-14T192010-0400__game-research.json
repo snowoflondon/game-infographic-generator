@@ -1,0 +1,67 @@
+{
+  "title": "Genshin Impact",
+  "alternative_titles": ["原神"],
+  "developer": "miHoYo",
+  "publisher": "miHoYo",
+  "release_date": "2020-09-28",
+  "genres": ["Action RPG", "Open-world RPG"],
+  "platforms": ["PC", "Android", "iOS", "PlayStation 5", "Xbox Series X|S"],
+  "description": "A free-to-play open-world action RPG set in Teyvat. As the Traveler, players search for their lost sibling, explore different nations, solve puzzles, and combine characters' elemental abilities in combat, with optional cooperative play and gacha-based character acquisition.",
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 84,
+      "max_score": 100,
+      "platform": "PC",
+      "url": "https://www.metacritic.com/game/genshin-impact/critic-reviews/?platform=pc"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "In the sampled r/patientgamers discussion, players praise world exploration, scenery, and the amount of free content. Criticisms include gacha monetization, time-limited events, daily-task pressure, and dialogue pacing. Participants disagree on how intrusive monetization is and on the quality of the story. This is one discussion, not a representative survey of players.",
+    "positives": [
+      "Beautiful environments and rewarding exploration",
+      "A substantial amount of content playable without spending",
+      "World-building and regional quests appreciated by some players"
+    ],
+    "negatives": [
+      "Gacha mechanics and pressure to acquire characters",
+      "Time-limited content and daily activities can create fear of missing out",
+      "Slow dialogue and quest pacing for some players"
+    ]
+  },
+  "similar_games": ["The Legend of Zelda: Breath of the Wild"],
+  "sources": [
+    {
+      "name": "miHoYo official Chinese site: original-language title 原神",
+      "url": "https://ys.mihoyo.com/main/"
+    },
+    {
+      "name": "miHoYo launch press release: original publisher, formal September 28, 2020 launch, PC, Android and iOS",
+      "url": "https://prtimes.jp/main/html/rd/p/000000038.000048345.html"
+    },
+    {
+      "name": "miHoYo developer announcement on PlayStation Blog: original PS4 global launch, premise and action RPG gameplay",
+      "url": "https://blog.playstation.com/?p=340184"
+    },
+    {
+      "name": "Xbox official listing: miHoYo developer entity, current international publisher COGNOSPHERE, Xbox Series X|S and cooperative play",
+      "url": "https://www.xbox.com/en-US/games/store/_/9N7TFFRRZCC9"
+    },
+    {
+      "name": "HoYoverse official notice: PS4 login and support ended April 8, 2026; PS5 continues",
+      "url": "https://genshin.hoyoverse.com/m/en/news/detail/158501"
+    },
+    {
+      "name": "IT Home contemporary report: September 15, 2020 China PC technical open test, distinct from September 28 global launch",
+      "url": "https://www.ithome.com/0/508/851.htm"
+    },
+    {
+      "name": "Metacritic: PC critic aggregate",
+      "url": "https://www.metacritic.com/game/genshin-impact/critic-reviews/?platform=pc"
+    },
+    {
+      "name": "Reddit r/patientgamers: sampled exploration discussion, player sentiment and interpretive Breath of the Wild comparison",
+      "url": "https://www.reddit.com/r/patientgamers/comments/1v71uio/genshin_impacts_world_exploration_is_a_joy/"
+    }
+  ]
+}
