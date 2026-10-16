@@ -1,0 +1,77 @@
+{
+  "title": "NieR:Automata",
+  "alternative_titles": [
+    "ニーア オートマタ"
+  ],
+  "developer": "PlatinumGames",
+  "publisher": "Square Enix",
+  "release_date": "2017-02-23",
+  "genres": [
+    "Action RPG"
+  ],
+  "platforms": [
+    "PlayStation 4",
+    "PC"
+  ],
+  "description": "Androids 2B, 9S, and A2 fight machine lifeforms on a ruined Earth in an action RPG combining close-range weapon combat, ranged Pod attacks, and hacking with a story about the conflict between androids and machines.",
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 88,
+      "max_score": 100,
+      "platform": "PlayStation 4",
+      "url": "https://www.metacritic.com/game/nier-automata/critic-reviews/?platform=playstation-4"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "Across two sampled player discussions, participants praise the soundtrack, emotional storytelling, and unusual narrative perspectives; others find repeated sections, fetch quests, or hacking tedious and combat too simple, with disagreement about whether the eventual story payoff outweighs that repetition. This is a limited qualitative sample, not a representative consensus.",
+    "positives": [
+      "Memorable soundtrack and atmospheric music",
+      "Emotional storytelling and shifting perspectives",
+      "Fluid combat and genre variety appeal to some players"
+    ],
+    "negatives": [
+      "Repeated sections can feel tedious before the story payoff",
+      "Fetch-style side quests feel repetitive to some players",
+      "Combat simplicity and repeated hacking divide players"
+    ]
+  },
+  "similar_games": [
+    "NieR Replicant ver.1.22474487139...",
+    "Metal Gear Rising: Revengeance"
+  ],
+  "sources": [
+    {
+      "name": "PlatinumGames Japanese game page: original Japanese name, developer, publisher, genre, original release and edition distinctions",
+      "url": "https://www.platinumgames.co.jp/works/nier-automata"
+    },
+    {
+      "name": "PlatinumGames English game page: premise, characters, combat abilities, and original PS4/Steam platforms",
+      "url": "https://www.platinumgames.com/works/nier-automata"
+    },
+    {
+      "name": "Square Enix official Japanese game site: original PS4/Steam platforms and game overview",
+      "url": "https://www.jp.square-enix.com/nierautomata/"
+    },
+    {
+      "name": "Metacritic original PS4 critic reviews: 88/100",
+      "url": "https://www.metacritic.com/game/nier-automata/critic-reviews/?platform=playstation-4"
+    },
+    {
+      "name": "Patientgamers discussion: mixed views on combat, story, music, quests and repetition; Replicant comparison",
+      "url": "https://www.reddit.com/r/patientgamers/comments/wijb6l/nier_automata_is_in_my_opinionokay/"
+    },
+    {
+      "name": "Patientgamers discussion: narrative payoff versus repeated sections and gameplay friction",
+      "url": "https://www.reddit.com/r/patientgamers/comments/1dqepbi/i_had_such_a_weird_experience_with_nier_automata/"
+    },
+    {
+      "name": "Square Enix launch-era PlayStation announcement: original-game premise and official promotional image",
+      "url": "https://blog.playstation.com/2016/12/22/nier-automata-demo-out-today-on-playstation-store/"
+    },
+    {
+      "name": "Square Enix introduction: related NieR series and PlatinumGames action lineage (basis for editorial similar-game selection)",
+      "url": "https://blog.playstation.com/archive/2015/10/29/new-nier-automata-trailer-and-details-from-paris-game-week/"
+    }
+  ]
+}

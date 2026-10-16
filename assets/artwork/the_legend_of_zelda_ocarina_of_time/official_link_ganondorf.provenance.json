@@ -1,0 +1,17 @@
+{
+  "game": "The Legend of Zelda: Ocarina of Time",
+  "edition": "Original 1998 Nintendo 64 game",
+  "source_page_url": "https://www.nintendo.com/jp/character/zelda/history/index.html",
+  "gallery_manifest_url": "https://www.nintendo.com/jp/character/zelda/assets_2/data/gallery/05.json",
+  "direct_image_url": "https://www.nintendo.com/jp/character/zelda/assets_2/img/history/gallery/05/artwork-04.webp?unoptimized=true",
+  "retrieved_at": "2026-10-15T21:47:18-04:00",
+  "local_filename": "official_link_ganondorf.webp",
+  "dimensions": [
+    525,
+    700
+  ],
+  "usage_terms_url": "https://www.nintendo.com/jp/about_hp.html",
+  "usage_notes": "Local personal-use POC example. Nintendo website policy permits downloads for lawful private use; no public redistribution or commercial license asserted.",
+  "verification": "Gallery 05 identifies the 1998 Nintendo 64 game. Image decoded and visually inspected: Link confronts Ganondorf; centered hero crop retains both faces.",
+  "limitations": "Official gallery source is 525 x 700; enlarged and cropped to fill the hero, so sharpness is limited."
+}

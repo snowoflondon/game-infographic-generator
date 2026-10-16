@@ -9,6 +9,24 @@ the CLI validates and renders prepared local files.
 The current implementation validates metadata and renders single-game portrait PNGs.
 Personal rankings remain future work.
 
+The current single-game outputs are the POC baseline for further visual refinement.
+See the [current snapshot](current_snapshot__2026-10-15T224736-0400.md) for the latest
+review, verification results, and known limitations.
+
+### Agent skills
+
+| Skill | Purpose |
+| --- | --- |
+| [repo-understanding](skills/repo-understanding/SKILL.md) | Read-only repository refresher |
+| [change-planner](skills/change-planner/SKILL.md) | Read-only change and impact investigation |
+| [architecture-visualizer](skills/architecture-visualizer/SKILL.md) | Read-only architectural investigation with Mermaid output |
+| [game-research](skills/game-research/SKILL.md) | Source-backed metadata research and validation |
+| [infographic-design](skills/infographic-design/SKILL.md) | Rendering guidance, artwork discovery, and visual checks |
+
+Invoke a helper by asking, for example, “Use architecture-visualizer to diagram
+this repository.” The investigative helpers work independently and return their
+findings in the response; saving a report requires an explicit request.
+
 ### Single-game infographic
 
 ```text
@@ -129,6 +147,36 @@ The sample fixture copies the illustrative Persona 5 Royal example in
 `skills/game-research/SKILL.md`; it is not verified research. Schema validation
 does not verify facts or URL reachability. Research outputs need verified URLs.
 
+## Architecture diagram exports (optional)
+
+The `architecture-visualizer` skill returns Mermaid text without requiring a CLI.
+To export that text as SVG, PNG, or PDF, use the official
+[Mermaid CLI](https://github.com/mermaid-js/mermaid-cli). It is optional development
+tooling, declared in `tools/mermaid/package.json` with an npm lockfile;
+it is not a Python virtual-environment package.
+
+Use Node.js 22.13+ within the 22.x line and npm (the tested version is recorded
+in `tools/mermaid/.node-version`). On this workspace, a checksum-verified Node
+runtime is installed in ignored `.tools/node/`. Enable it for the current shell:
+
+```sh
+export PATH="$PWD/.tools/node/bin:$PATH"
+```
+
+On a fresh checkout, install Node.js 22 from [Node.js](https://nodejs.org/en/download)
+or your Node version manager first. From the repository root:
+
+```sh
+npm --prefix tools/mermaid ci
+npm --prefix tools/mermaid run render -- --version
+npm --prefix tools/mermaid run render -- -i "$PWD/architecture.mmd" -o "$PWD/architecture.svg"
+```
+
+Supply your own `.mmd` file; change the output extension to `.png` or `.pdf` as
+needed. Installation also downloads the browser used by Mermaid CLI through
+Puppeteer, independently of the Python renderer's Playwright Chromium. No npm
+step is required to validate game metadata or render game infographics.
+
 ## Test
 
 ```sh
@@ -145,7 +193,7 @@ provided the project dependencies and pytest are available in the active environ
 ```sh
 source .venv/bin/activate
 game-infographic-generator single-game \
-  data/validation-runs/genshin_impact__2026-10-14T192010-0400__game-research.json \
+  data/validation-runs/game-research/genshin_impact__2026-10-14T192010-0400__game-research.json \
   output/genshin_impact.png
 ```
 
@@ -158,10 +206,10 @@ Presentation JSON is separate from research metadata:
 
 ```sh
 game-infographic-generator single-game \
-  data/validation-runs/yakuza_like_a_dragon__2026-10-14T192010-0400__game-research.json \
+  data/validation-runs/game-research/yakuza_like_a_dragon__2026-10-14T192010-0400__game-research.json \
   output/yakuza_like_a_dragon.png \
   --artwork assets/artwork/yakuza_like_a_dragon/official_hero.jpg \
-  --presentation data/validation-runs/yakuza_like_a_dragon__2026-10-14T210608-0400__infographic-design.presentation.json
+  --presentation data/validation-runs/infographic-design/yakuza_like_a_dragon__2026-10-14T210608-0400__infographic-design.presentation.json
 ```
 
 ```json
@@ -216,13 +264,23 @@ The standalone Python CLI only validates metadata, reads any requested local
 artwork, and renders it. It does not search, download, establish permissions, or
 verify which game an image depicts. That verification is the agent/user's job.
 Both normal and compact layouts retain a full-width 16:9 hero beneath the title,
-using proportional cropping without distortion. An artwork-mode failure never
+using proportional cropping without distortion. The frame controls image size
+even for portrait source images. An artwork-mode failure never
 triggers a typography-only substitute.
 
 ### Example artifacts
 
-`data/validation-runs/` contains research JSON, condensed `.presentation.json`
-sidecars, and rendered PNGs for the example games. Validation-run filenames use
+`data/validation-runs/game-research/` contains research JSON;
+`data/validation-runs/infographic-design/` contains condensed `.presentation.json`
+sidecars and rendered PNGs. Files are grouped by the workflow stage tested,
+without further game or timestamp subfolders. Validation-run filenames use
 `<game_slug>__<timestamp>__<skill-name>.<extension>`. Artwork and its provenance
 remain in `assets/artwork/`; research JSON retains source references that are
 omitted from the infographic.
+
+The saved examples cover Genshin Impact, Stellar Blade, Yakuza: Like a Dragon,
+Clair Obscur: Expedition 33, The Legend of Zelda: Ocarina of Time, and NieR:Automata.
+Older iterations remain available as references. Some runs include a
+`.validation.md` report; these reports are optional and are not currently required
+by the skills. Research validation checks structure rather than factual truth;
+player perspectives are sampled opinions and similar-game choices are editorial.

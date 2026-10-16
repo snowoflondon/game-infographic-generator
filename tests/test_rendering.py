@@ -65,6 +65,30 @@ def test_actual_png(tmp_path, artwork):
     assert (width, height) == (1200, 1600)
 
 
+@pytest.mark.parametrize('size', [(300, 900), (900, 300)])
+def test_artwork_intrinsic_ratio_does_not_expand_hero(tmp_path, size):
+    from PIL import Image
+    from playwright.sync_api import sync_playwright
+
+    artwork = tmp_path / 'art.png'
+    Image.new('RGB', size, '#375b68').save(artwork)
+    html = build_html(GameMetadata(title='Artwork frame test'), artwork)
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch()
+        try:
+            page = browser.new_page(viewport={'width': 1200, 'height': 1600})
+            page.set_content(html)
+            for compact in (False, True):
+                page.locator('main').evaluate('(el, compact) => el.classList.toggle("compact", compact)', compact)
+                frame = page.locator('figure').bounding_box()
+                image = page.locator('figure img').bounding_box()
+                assert frame['width'] / frame['height'] == pytest.approx(16 / 9)
+                assert image['width'] == pytest.approx(frame['width'])
+                assert image['height'] == pytest.approx(frame['height'])
+        finally:
+            browser.close()
+
+
 def test_sources_omitted_without_mutation(artwork):
     from game_infographic_generator.models import Source, CriticScore
     game = GameMetadata(title='Example', sources=[Source(name='Hidden source', url='https://example.com')],
@@ -85,7 +109,7 @@ def test_overflow_rejected(tmp_path, artwork):
 
 
 def test_genshin_with_artwork_uses_condensed_copy(tmp_path, artwork):
-    source = Path(__file__).resolve().parents[1] / 'data/validation-runs/genshin_impact__2026-10-14T192010-0400__game-research.json'
+    source = Path(__file__).resolve().parents[1] / 'data/validation-runs/game-research/genshin_impact__2026-10-14T192010-0400__game-research.json'
     original = source.read_bytes()
     game = GameMetadata.model_validate_json(original)
     assert render_single_game(game, tmp_path / 'genshin.png', artwork) == (1200, 1600)

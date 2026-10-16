@@ -1,0 +1,60 @@
+{
+  "title": "The Legend of Zelda: Ocarina of Time",
+  "alternative_titles": [
+    "ゼルダの伝説 時のオカリナ"
+  ],
+  "developer": "Nintendo",
+  "publisher": "Nintendo",
+  "release_date": "1998-11-21",
+  "genres": [
+    "Action-adventure"
+  ],
+  "platforms": [
+    "Nintendo 64"
+  ],
+  "description": "Link explores Hyrule to stop Ganondorf from seizing the Triforce, traveling between childhood and adulthood while solving dungeon puzzles and battling enemies with weapons, tools, and ocarina melodies.",
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 99,
+      "max_score": 100,
+      "platform": "Nintendo 64",
+      "url": "https://www.metacritic.com/game/the-legend-of-zelda-ocarina-of-time-1998/"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "The sampled community discussion praises the dungeons, soundtrack, atmosphere, and story, while some participants find the controls and camera dated, equipment changes cumbersome, and Hyrule Field sparse; these opinions are not a representative consensus.",
+    "positives": [
+      "Inventive dungeons and satisfying puzzles",
+      "Memorable soundtrack and atmosphere",
+      "Engaging story and sense of adventure"
+    ],
+    "negatives": [
+      "Controls and camera feel dated to some players",
+      "Repeated equipment-menu changes interrupt play",
+      "Hyrule Field feels sparse to some players"
+    ]
+  },
+  "similar_games": [
+    "The Legend of Zelda: Majora’s Mask",
+    "The Legend of Zelda: Twilight Princess"
+  ],
+  "sources": [
+    {
+      "name": "Nintendo Zelda history: Japanese title, earliest Japanese release, original platform, story, and related series entries",
+      "url": "https://www.nintendo.com/jp/character/zelda/history/index.html"
+    },
+    {
+      "name": "Nintendo original Nintendo 64 game website: story and dungeons",
+      "url": "https://www.nintendo.co.jp/n01/n64/software/zelda/index.html"
+    },
+    {
+      "name": "Metacritic 1998 edition: Nintendo developer/publisher, description, Nintendo 64 critic score",
+      "url": "https://www.metacritic.com/game/the-legend-of-zelda-ocarina-of-time-1998/"
+    },
+    {
+      "name": "NeoGAF community discussion: sampled player perspectives",
+      "url": "https://www.neogaf.com/threads/so-i-played-ocarina-of-time-for-the-very-first-time-and-this-game-could-do-with-a-modern-remake.1657560/"
+    }
+  ]
+}

@@ -123,9 +123,10 @@ runtime is an implementation detail, not a separate application stack.
   or use string truncation as semantic summarization. Standalone CLI callers
   supply their own condensed copy; Python validates structure, not faithfulness.
 - Artwork mode uses a full-width 16:9 hero beneath the title in both normal and
-  compact layouts. Fit the source proportionally with `object-fit: cover` and a
-  deliberate focal position (center by default). Inspect crops to preserve
-  important subjects and embedded text; never stretch or distort the image.
+  compact layouts. The frame determines image dimensions; intrinsic source
+  dimensions must never expand it. Fit the source proportionally with
+  `object-fit: cover` and a deliberate focal position (center by default);
+  never stretch or distort the image.
   Preserve all existing display content and readable typography without further
   condensation or removal. Compact mode reduces spacing, not hero prominence.
   Try normal layout
@@ -196,14 +197,17 @@ itself trigger discovery.
   present a mocked screenshot as proof that export works.
 - Before completion, verify successful PNG export and visually inspect it for
   title wrapping, legibility, missing glyphs, clipping, spacing, and alignment.
+  Inspect the rendered artwork crop to ensure important subjects and embedded
+  text remain visible, and report noticeable softness from upscaling.
   Confirm displayed facts, dates, scores, and original-language titles match
   the validated JSON, allowing only faithful presentation formatting. Fix
   observed issues without changing metadata or adding unsupported claims.
 - Test palette extraction, neutral/transparent fallback, deterministic selection,
   contrast, fixed neutral colors, CSS variables, and unchanged artwork bytes.
 - Test both normal and compact artwork layouts, missing/corrupt artwork, and
-  overflow failure. Verify artwork remains present in every successful artwork-mode export; test
-  full text-only mode separately.
+  overflow failure. Use portrait, square, and landscape images to verify that
+  the hero remains 16:9 in both layouts. Verify artwork remains present in every
+  successful artwork-mode export; test full text-only mode separately.
 - Document rendering dependency installation, `python -m playwright install
   chromium`, any platform system/font prerequisites, the implemented CLI usage,
   output dimensions, and test commands in README. Clearly distinguish current

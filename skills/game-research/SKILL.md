@@ -42,7 +42,11 @@ or validator as part of this research skill.
    or sources are unavailable, report the limitation rather than inventing data.
 3. Prefer official developer/publisher sources for factual details.
    Research original-language alternative titles using the rule below.
-4. Use reputable review aggregators for scores, checking the edition and platform.
+4. Use reputable review aggregators for scores. Before taking metadata or scores
+   from a source, verify the edition, platform, and release year on the opened
+   page; a matching title or familiar URL is insufficient. If it describes a
+   different edition, locate the correct listing. If no matching score can be
+   verified, leave `critic_scores` empty and report the gap.
 5. Distinguish facts from player opinions. Summarize sentiment from actual
    community discussions without implying that a small sample is universal.
 6. Populate fields according to the `GameMetadata` Pydantic model. Resolve source
