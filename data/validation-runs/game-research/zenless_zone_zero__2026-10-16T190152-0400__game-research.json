@@ -1,0 +1,74 @@
+{
+  "title": "Zenless Zone Zero",
+  "alternative_titles": [
+    "绝区零"
+  ],
+  "developer": "HoYoverse",
+  "publisher": "COGNOSPHERE",
+  "release_date": "2024-07-04",
+  "genres": [
+    "Action RPG"
+  ],
+  "platforms": [
+    "PC",
+    "iOS",
+    "Android",
+    "PlayStation 5",
+    "Xbox Series X|S"
+  ],
+  "description": "A free-to-play urban fantasy action RPG in which a Proxy guides teams of agents through dangerous Hollows around New Eridu, using character switching, assists and chain attacks.",
+  "similar_games": [
+    "Honkai Impact 3rd",
+    "Punishing: Gray Raven"
+  ],
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 73,
+      "max_score": 100,
+      "platform": "PlayStation 5",
+      "url": "https://www.metacritic.com/game/zenless-zone-zero/critic-reviews/?platform=playstation-5"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "A sampled July 2024 launch discussion praises combat and character presentation, while opinions differ on TV exploration and early-game pacing; it does not establish the state of later updates.",
+    "positives": [
+      "Launch players praised fast, satisfying combat",
+      "Distinctive characters and animation"
+    ],
+    "negatives": [
+      "Launch-era TV exploration divided players",
+      "Some found early progression slow or too easy"
+    ]
+  },
+  "sources": [
+    {
+      "name": "HoYoverse producer — official launch and gameplay overview",
+      "url": "https://blog.playstation.com/2024/06/28/zenless-zone-zero-debuts-on-ps5-july-4-details-on-combat-new-area-and-characters-unveiled/"
+    },
+    {
+      "name": "Official Chinese PlayStation page — original-language title",
+      "url": "https://www.playstation.com/zh-hans-hk/games/zenless-zone-zero/"
+    },
+    {
+      "name": "Official Xbox page — Xbox platform",
+      "url": "https://www.xbox.com/en-US/games/zenless-zone-zero"
+    },
+    {
+      "name": "HoYoverse — global launch announcement",
+      "url": "https://zenless.hoyoverse.com/en-us/news/124378"
+    },
+    {
+      "name": "Reddit — sampled July 2024 launch discussion",
+      "url": "https://www.reddit.com/r/ZZZ_Official/comments/1e1nesz/were_just_roughly_over_a_week_since_zzz_released/"
+    },
+    {
+      "name": "Official PlayStation game page — game and artwork",
+      "url": "https://www.playstation.com/en-us/games/zenless-zone-zero/"
+    },
+    {
+      "name": "Metacritic — platform-specific critic score",
+      "url": "https://www.metacritic.com/game/zenless-zone-zero/critic-reviews/?platform=playstation-5"
+    }
+  ]
+}

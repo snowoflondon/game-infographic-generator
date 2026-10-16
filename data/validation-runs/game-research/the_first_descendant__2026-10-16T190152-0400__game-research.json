@@ -1,0 +1,72 @@
+{
+  "title": "The First Descendant",
+  "alternative_titles": [
+    "퍼스트 디센던트"
+  ],
+  "developer": "NEXON Games",
+  "publisher": "NEXON",
+  "release_date": "2024-07-02",
+  "genres": [
+    "Looter shooter",
+    "Action RPG"
+  ],
+  "platforms": [
+    "PC",
+    "PlayStation 4",
+    "PlayStation 5",
+    "Xbox One",
+    "Xbox Series X|S"
+  ],
+  "description": "A free-to-play third-person cooperative looter shooter in which Descendants use distinct abilities and weapons to defend Ingris, collect equipment and tackle large bosses with up to four players.",
+  "similar_games": [
+    "Warframe",
+    "Destiny 2"
+  ],
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 57,
+      "max_score": 100,
+      "platform": "PC",
+      "url": "https://www.metacritic.com/game/the-first-descendant/critic-reviews/?platform=pc"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "Sampled user reviews across multiple updates praise combat, visuals and build progression, while others criticize repetitive grinding, monetization and mission variety; experiences differ by version and player.",
+    "positives": [
+      "Enjoyable combat and character abilities",
+      "Attractive visuals",
+      "Rewarding builds and equipment progression for some"
+    ],
+    "negatives": [
+      "Repetitive farming and limited mission variety",
+      "Monetization and time demands draw criticism"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Nexon Games — developer and Korean title",
+      "url": "https://www.nexongames.co.kr/game/first_descendant.php"
+    },
+    {
+      "name": "Nexon — official full release versus preload schedule",
+      "url": "https://tfd.nexon.com/en/news/2591438"
+    },
+    {
+      "name": "Steam — developer, publisher and gameplay",
+      "url": "https://store.steampowered.com/app/2074920/"
+    },
+    {
+      "name": "Metacritic — sampled PC user reviews",
+      "url": "https://www.metacritic.com/game/the-first-descendant/user-reviews/?platform=pc"
+    },
+    {
+      "name": "Official PlayStation game page — game and artwork",
+      "url": "https://www.playstation.com/en-us/games/the-first-descendant/"
+    },
+    {
+      "name": "Metacritic — platform-specific critic score",
+      "url": "https://www.metacritic.com/game/the-first-descendant/critic-reviews/?platform=pc"
+    }
+  ]
+}

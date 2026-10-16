@@ -1,0 +1,15 @@
+{
+  "source_page_url": "https://www.playstation.com/en-us/games/crimson-desert/",
+  "direct_image_url": "https://gmedia.playstation.com/is/image/SIEPDC/CrimsonDesert-hero-desktop-01-en-11mar26?fmt=jpeg&wid=1920",
+  "retrieved_at": "2026-10-16T19:41:02.308683-04:00",
+  "local_filename": "official_hero.jpg",
+  "dimensions": [
+    1920,
+    717
+  ],
+  "format": "JPEG",
+  "usage_terms_url": "https://www.playstation.com/en-us/legal/website-terms-of-use/",
+  "usage_notes": "Local personal noncommercial POC test under website personal-use permission; no public redistribution or commercial license asserted; rights retained by owners.",
+  "verification": "Decoded with Pillow and visually inspected against the exact game product page.",
+  "selection_notes": "Official promotional hero."
+}

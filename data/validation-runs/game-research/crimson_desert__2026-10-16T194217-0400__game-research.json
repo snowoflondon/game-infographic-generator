@@ -1,0 +1,71 @@
+{
+  "title": "Crimson Desert",
+  "alternative_titles": [
+    "붉은사막"
+  ],
+  "developer": "Pearl Abyss",
+  "publisher": "Pearl Abyss",
+  "release_date": "2026-03-19",
+  "genres": [
+    "Action-adventure",
+    "Open world"
+  ],
+  "platforms": [
+    "PlayStation 5",
+    "Xbox Series X|S",
+    "PC",
+    "macOS"
+  ],
+  "description": "An open-world action-adventure following Greymane mercenary Kliff across Pywel as he seeks scattered comrades, combining exploration, varied combat, puzzles and traversal.",
+  "similar_games": [
+    "The Witcher 3: Wild Hunt",
+    "Dragon’s Dogma 2"
+  ],
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 77,
+      "max_score": 100,
+      "platform": "PC",
+      "url": "https://www.metacritic.com/game/crimson-desert/critic-reviews/?platform=pc"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "Sampled PC user reviews praise the world, visuals and sandbox combat, while others criticize story quality, controls and slow chores; feedback spans patches and is not a representative current-version survey.",
+    "positives": [
+      "Expansive world and striking scenery",
+      "Varied combat and sandbox possibilities"
+    ],
+    "negatives": [
+      "Story and character depth disappoint some",
+      "Unintuitive controls for some players",
+      "Slow chores and pacing"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Pearl Abyss — worldwide launch and platforms",
+      "url": "https://www.pearlabyss.com/en-US/Board/Detail?_boardNo=14684"
+    },
+    {
+      "name": "Official Korean site — original title",
+      "url": "https://crimsondesert.pearlabyss.com/ko-KR/Main"
+    },
+    {
+      "name": "Pearl Abyss — launch is live",
+      "url": "https://crimsondesert.pearlabyss.com/en-us/News/Notice/Detail?_boardNo=70"
+    },
+    {
+      "name": "Official game page — overview and artwork",
+      "url": "https://www.playstation.com/en-us/games/crimson-desert/"
+    },
+    {
+      "name": "Metacritic — edition and platform-specific critic score",
+      "url": "https://www.metacritic.com/game/crimson-desert/critic-reviews/?platform=pc"
+    },
+    {
+      "name": "Metacritic — sampled player reviews",
+      "url": "https://www.metacritic.com/game/crimson-desert/user-reviews/?platform=pc"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import base64
 import struct
 import os
 import tempfile
+import logging
 from importlib.resources import files
 from pathlib import Path
 
@@ -12,6 +13,7 @@ from playwright.sync_api import Error as PlaywrightError, sync_playwright
 
 from ..models import GameMetadata
 from .theme import extract_theme
+from .platforms import format_platforms
 from .presentation import ArtworkPresentation
 
 
@@ -61,7 +63,7 @@ def build_html(metadata: GameMetadata, artwork: Path | None = None,
     resources = files(__package__).joinpath("templates")
     env = Environment(autoescape=True, undefined=StrictUndefined)
     template = env.from_string(resources.joinpath("single_game.html.j2").read_text(encoding="utf-8"))
-    return template.render(game=metadata, artwork=image, theme=theme, presentation=presentation,
+    return template.render(game=metadata, platforms_display=format_platforms(metadata.platforms), artwork=image, theme=theme, presentation=presentation,
                            stylesheet=resources.joinpath("single_game.css").read_text(encoding="utf-8"))
 
 
@@ -101,11 +103,21 @@ def render_single_game(metadata: GameMetadata, output_path: Path,
                     raise RenderingError("Infographic layout is missing")
                 fits = """() => {
                     const main = document.querySelector('main');
+                    const title = main.querySelector('h1');
+                    const lineHeight = parseFloat(getComputedStyle(title).lineHeight);
+                    title.classList.remove('natural-wrap');
+                    if (title.getBoundingClientRect().height > 2 * lineHeight + 1) {
+                        title.classList.add('natural-wrap');
+                    }
+                    if (title.getBoundingClientRect().height > 2 * lineHeight + 1) {
+                        return false;
+                    }
                     const box = main.getBoundingClientRect();
                     const style = getComputedStyle(main);
                     const bottom = box.bottom - parseFloat(style.paddingBottom);
                     return main.scrollHeight <= 1600 && main.scrollWidth <= 1200 &&
                         Array.from(main.querySelectorAll('*')).every(el => {
+                            if (!el.getClientRects().length) return true;
                             const r = el.getBoundingClientRect();
                             return r.bottom <= bottom + 1 && r.right <= box.right && r.left >= box.left;
                         });
@@ -113,7 +125,14 @@ def render_single_game(metadata: GameMetadata, output_path: Path,
                 if not page.evaluate(fits):
                     page.locator('main').evaluate("el => el.classList.add('compact')")
                 if not page.evaluate(fits):
-                    raise RenderingError("Content does not fit the fixed 1200 × 1600 canvas; normal and compact layouts both overflow. No PNG was exported.")
+                    similar = page.locator('.similar-games-section')
+                    if similar.count():
+                        similar.evaluate('el => el.remove()')
+                        if page.evaluate(fits):
+                            logging.getLogger(__name__).warning(
+                                'Similar Games omitted to fit the compact layout; input metadata is unchanged.')
+                if not page.evaluate(fits):
+                    raise RenderingError("Content does not fit the fixed 1200 × 1600 canvas with a maximum two-line title, even after compact layout and omitting Similar Games. No PNG was exported.")
                 png = canvas.screenshot(type="png", timeout=15000)
                 if png[:8] != b"\x89PNG\r\n\x1a\n" or struct.unpack(">II", png[16:24]) != (1200, 1600):
                     raise RenderingError("Chromium returned an invalid PNG or unexpected dimensions")

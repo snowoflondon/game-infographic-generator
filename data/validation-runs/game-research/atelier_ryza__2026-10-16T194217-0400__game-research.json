@@ -1,0 +1,73 @@
+{
+  "title": "Atelier Ryza: Ever Darkness & the Secret Hideout",
+  "alternative_titles": [
+    "ライザのアトリエ 〜常闇の女王と秘密の隠れ家〜"
+  ],
+  "developer": "Gust",
+  "publisher": "Koei Tecmo",
+  "release_date": "2019-09-26",
+  "genres": [
+    "JRPG"
+  ],
+  "platforms": [
+    "PlayStation 4",
+    "Nintendo Switch",
+    "PC"
+  ],
+  "description": "A coming-of-age role-playing game following Ryza and her friends through a summer adventure, combining exploration, material gathering, alchemical synthesis and real-time tactical battles.",
+  "similar_games": [
+    "Atelier Sophie: The Alchemist of the Mysterious Book",
+    "Atelier Ryza 2: Lost Legends & the Secret Fairy"
+  ],
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 75,
+      "max_score": 100,
+      "platform": "PlayStation 4",
+      "url": "https://www.metacritic.com/game/atelier-ryza-ever-darkness-and-the-secret-hideout/critic-reviews/?platform=playstation-4"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "Sampled original-game PS4 user reviews enjoy the relaxed atmosphere, characters and alchemy, while some find the story slow and repeated crafting or inventory management tedious; experiences vary.",
+    "positives": [
+      "Relaxed atmosphere and likable characters",
+      "Engaging alchemical synthesis",
+      "Enjoyable combat for some players"
+    ],
+    "negatives": [
+      "Slow story progression",
+      "Repetitive crafting and inventory management"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Koei Tecmo — original title, studio and platforms",
+      "url": "https://www.koeitecmoamerica.com/games/atelier-ryza-ever-darkness-the-secret-hideout/"
+    },
+    {
+      "name": "Official Japanese site — original-language title",
+      "url": "https://www.gamecity.ne.jp/atelier/ryza/"
+    },
+    {
+      "name": "Official Japanese launch news — September 26, 2019; PC followed October 29",
+      "url": "https://www.gamecity.ne.jp/atelier/ryza/topics.html"
+    },
+    {
+      "name": "Official systems and story overview",
+      "url": "https://www.koeitecmoamerica.com/ryza/"
+    },
+    {
+      "name": "Official game page — overview and artwork",
+      "url": "https://www.playstation.com/en-vn/games/atelier-ryza-ever-darkness-and-the-secret-hideout/"
+    },
+    {
+      "name": "Metacritic — edition and platform-specific critic score",
+      "url": "https://www.metacritic.com/game/atelier-ryza-ever-darkness-and-the-secret-hideout/critic-reviews/?platform=playstation-4"
+    },
+    {
+      "name": "Metacritic — sampled player reviews",
+      "url": "https://www.metacritic.com/game/atelier-ryza-ever-darkness-and-the-secret-hideout/user-reviews/?platform=playstation-4"
+    }
+  ]
+}

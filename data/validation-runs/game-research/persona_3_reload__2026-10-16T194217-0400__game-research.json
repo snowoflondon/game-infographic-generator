@@ -1,0 +1,77 @@
+{
+  "title": "Persona 3 Reload",
+  "alternative_titles": [
+    "ペルソナ３ リロード"
+  ],
+  "developer": "Atlus",
+  "publisher": "Atlus / Sega",
+  "release_date": "2024-02-01",
+  "genres": [
+    "JRPG",
+    "Social simulation"
+  ],
+  "platforms": [
+    "PlayStation 4",
+    "PlayStation 5",
+    "Xbox One",
+    "Xbox Series X|S",
+    "PC",
+    "Nintendo Switch 2"
+  ],
+  "description": "A remake of Persona 3 that follows a transfer student balancing school life and relationships with turn-based battles against Shadows during the hidden Dark Hour.",
+  "similar_games": [
+    "Persona 4 Golden",
+    "Persona 5 Royal"
+  ],
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 89,
+      "max_score": 100,
+      "platform": "PC",
+      "url": "https://www.metacritic.com/game/persona-3-reload/critic-reviews/?platform=pc"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "Sampled PC user reviews praise the emotional story, soundtrack and combat, while some describe Tartarus exploration and the narrative pace as repetitive or slow; opinions are not a representative survey.",
+    "positives": [
+      "Emotional story and character relationships",
+      "Memorable soundtrack",
+      "Enjoyable turn-based combat"
+    ],
+    "negatives": [
+      "Repetitive Tartarus exploration",
+      "Slow story pacing for some players"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Sega Japan — original title, release and platforms",
+      "url": "https://www.sega.jp/game/detail/p3re/"
+    },
+    {
+      "name": "Atlus — official February 2 launch date",
+      "url": "https://atlus.com/persona-3-reload-and-persona-3-reload-expansion-pass-patch-notes-1-06-1-07/"
+    },
+    {
+      "name": "Steam — PC release date and developer/publisher",
+      "url": "https://store.steampowered.com/app/2161700/Persona_3_Reload/"
+    },
+    {
+      "name": "VideoGamer — regional unlock timing",
+      "url": "https://www.videogamer.com/news/persona-3-reload-release-time/"
+    },
+    {
+      "name": "Official game page — overview and artwork",
+      "url": "https://www.playstation.com/en-us/games/persona-3-reload/"
+    },
+    {
+      "name": "Metacritic — edition and platform-specific critic score",
+      "url": "https://www.metacritic.com/game/persona-3-reload/critic-reviews/?platform=pc"
+    },
+    {
+      "name": "Metacritic — sampled player reviews",
+      "url": "https://www.metacritic.com/game/persona-3-reload/user-reviews/?platform=pc"
+    }
+  ]
+}

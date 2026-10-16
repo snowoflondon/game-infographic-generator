@@ -1,0 +1,69 @@
+{
+  "title": "Shin Megami Tensei V: Vengeance",
+  "alternative_titles": [
+    "真・女神転生Ⅴ Vengeance"
+  ],
+  "developer": "Atlus",
+  "publisher": "Atlus / Sega",
+  "release_date": "2024-06-14",
+  "genres": [
+    "JRPG",
+    "Turn-based RPG"
+  ],
+  "platforms": [
+    "Nintendo Switch",
+    "PlayStation 4",
+    "PlayStation 5",
+    "Xbox One",
+    "Xbox Series X|S",
+    "PC"
+  ],
+  "description": "An expanded role-playing game set in a ruined Tokyo, combining turn-based battles, demon negotiation and fusion with two story paths: the Canon of Creation and the new Canon of Vengeance.",
+  "similar_games": [
+    "Shin Megami Tensei III Nocturne HD Remaster",
+    "Persona 3 Reload"
+  ],
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 90,
+      "max_score": 100,
+      "platform": "PC",
+      "url": "https://www.metacritic.com/game/shin-megami-tensei-v-vengeance/critic-reviews/?platform=pc"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "Sampled PC user reviews praise tactical battles, demon fusion and audiovisual style, while some criticize navigation and thin storytelling; these opinions are not a representative survey.",
+    "positives": [
+      "Strategic turn-based battles",
+      "Demon fusion and team building",
+      "Distinctive art and soundtrack"
+    ],
+    "negatives": [
+      "Tedious map navigation for some players",
+      "Uneven storytelling and characterization"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Sega Japan — edition, Japanese title and release date",
+      "url": "https://www.sega.jp/game/detail/megaten5-vengeance/"
+    },
+    {
+      "name": "Sega Asia — platforms and edition overview",
+      "url": "https://asia.sega.com/megaten5/vengeance/en/"
+    },
+    {
+      "name": "Metacritic — sampled PC player reviews",
+      "url": "https://www.metacritic.com/game/shin-megami-tensei-v-vengeance/user-reviews/?platform=pc"
+    },
+    {
+      "name": "Official PlayStation game page — game and artwork",
+      "url": "https://www.playstation.com/en-us/games/shin-megami-tensei-v-vengeance/"
+    },
+    {
+      "name": "Metacritic — platform-specific critic score",
+      "url": "https://www.metacritic.com/game/shin-megami-tensei-v-vengeance/critic-reviews/?platform=pc"
+    }
+  ]
+}

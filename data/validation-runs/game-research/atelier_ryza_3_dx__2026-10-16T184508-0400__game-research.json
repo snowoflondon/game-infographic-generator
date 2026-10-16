@@ -1,0 +1,58 @@
+{
+  "title": "Atelier Ryza 3: Alchemist of the End & the Secret Key DX",
+  "alternative_titles": [
+    "ライザのアトリエ３ ～終わりの錬金術士と秘密の鍵～ DX"
+  ],
+  "developer": "KOEI TECMO GAMES CO., LTD.",
+  "publisher": "KOEI TECMO GAMES CO., LTD.",
+  "release_date": "2025-11-12",
+  "genres": [
+    "JRPG"
+  ],
+  "platforms": [
+    "PlayStation 4",
+    "PlayStation 5",
+    "Nintendo Switch",
+    "Nintendo Switch 2",
+    "PC"
+  ],
+  "description": "Ryza and her friends return for a final summer adventure exploring the origins of alchemy and the mysteries of their world. This DX edition adds playable characters Clifford, Serri, and Kilo, a new story, custom combat settings, usability improvements, and the original game’s additional content.",
+  "critic_scores": [],
+  "player_sentiment": {
+    "summary": "In one sampled discussion about Ryza 3 DX, players welcome clearer Switch 2 visuals and convenient portable play, while some criticize PC optimization and remaining small interface text. Experiences vary by platform and hardware; these launch-era observations are not a representative consensus or a current technical assessment.",
+    "positives": [
+      "Clearer visuals on Switch 2 compared with the original Switch release",
+      "Convenient portable play and suspend functionality"
+    ],
+    "negatives": [
+      "PC performance concerns reported by some players",
+      "Small interface and party-chatter text despite subtitle-size options"
+    ]
+  },
+  "similar_games": [
+    "Atelier Ryza: Ever Darkness & the Secret Hideout DX",
+    "Atelier Ryza 2: Lost Legends & the Secret Fairy DX"
+  ],
+  "sources": [
+    {
+      "name": "Official DX Steam product: developer, publisher, PC date and edition-specific content",
+      "url": "https://store.steampowered.com/app/3365050/"
+    },
+    {
+      "name": "Official Japanese Steam title",
+      "url": "https://store.steampowered.com/app/3365050/?l=japanese"
+    },
+    {
+      "name": "Official DX product list: console platforms and related DX games",
+      "url": "https://atelier.games/secretdx/jp/products/"
+    },
+    {
+      "name": "Official PlayStation DX page: console date, story, new content and screenshot",
+      "url": "https://www.playstation.com/en-us/games/atelier-ryza-3-alchemist-of-the-end-and-the-secret-key-dx/"
+    },
+    {
+      "name": "Community discussion of Ryza 3 DX: sampled platform-specific player opinions",
+      "url": "https://www.reddit.com/r/Atelier/comments/1ozsa02/looking_opinions_from_real_players_about_ryza_3/"
+    }
+  ]
+}

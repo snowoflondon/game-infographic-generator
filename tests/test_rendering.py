@@ -49,6 +49,130 @@ def test_unicode_and_scores(artwork):
     assert 'PlayStation 4' in html
 
 
+@pytest.mark.parametrize('title', [
+    'Series: A Longer Subtitle: Another Chapter',
+    'Series:Subtitle',
+    'シリーズ：長いサブタイトル',
+    'A Long Title Without Punctuation',
+    '<script>: An Escaped Subtitle',
+    'A Title Ending With:',
+])
+def test_title_break_hints_preserve_text_and_escaping(title):
+    from html.parser import HTMLParser
+
+    class HeadingReader(HTMLParser):
+        in_heading = False
+
+        def __init__(self):
+            super().__init__()
+            self.parts = []
+
+        def handle_starttag(self, tag, attrs):
+            if tag == 'h1':
+                self.in_heading = True
+
+        def handle_endtag(self, tag):
+            if tag == 'h1':
+                self.in_heading = False
+
+        def handle_data(self, data):
+            if self.in_heading:
+                self.parts.append(data)
+
+    html = raw_html(GameMetadata(title=title))
+    heading = HeadingReader()
+    heading.feed(html)
+    assert ''.join(heading.parts) == title
+    assert '<script>' not in html
+
+
+@pytest.fixture
+def captured_layout(monkeypatch):
+    from playwright.sync_api import Locator
+    original = Locator.screenshot
+    observed = {}
+
+    def capture(self, *args, **kwargs):
+        observed.update(self.evaluate('''el => {
+            const title = el.querySelector('h1');
+            return {title: title.textContent,
+                lines: Math.round(title.getBoundingClientRect().height / parseFloat(getComputedStyle(title).lineHeight)),
+                natural: title.classList.contains('natural-wrap'),
+                compact: el.classList.contains('compact'),
+                similar: !!el.querySelector('.similar-games-section'),
+                artwork: !!el.querySelector('figure img'),
+                headings: Array.from(el.querySelectorAll('h2')).map(n => n.textContent)};
+        }'''))
+        return original(self, *args, **kwargs)
+
+    monkeypatch.setattr(Locator, 'screenshot', capture)
+    return observed
+
+
+@pytest.mark.parametrize('title,natural,lines', [
+    ('Series: Subtitle', False, 1),
+    ('A Very Long Journey: Beyond the Distant Mountains', False, 2),
+    ('Atelier Ryza 3: Alchemist of the End & the Secret Key DX', True, 2),
+])
+def test_measured_title_policy(tmp_path, captured_layout, title, natural, lines):
+    raw_render(GameMetadata(title=title, similar_games=['Related Game']), tmp_path / 'title.png')
+    assert captured_layout['title'] == title
+    assert captured_layout['lines'] == lines
+    assert captured_layout['natural'] == natural
+    assert captured_layout['similar']  # Never omit the section if it fits.
+
+
+def test_similar_games_last_resort_preserves_metadata(tmp_path, artwork, captured_layout, caplog):
+    root = Path(__file__).resolve().parents[1]
+    source = next((root / 'data/validation-runs/game-research').glob('atelier_ryza_3_dx__*.json'))
+    original = source.read_bytes()
+    game = GameMetadata.model_validate_json(original)
+    before = game.model_dump_json()
+    copy_path = next((root / 'data/validation-runs/infographic-design/01-title-and-similar-games').glob('atelier_ryza_3_dx__*.presentation.json'))
+    presentation = ArtworkPresentation.model_validate_json(copy_path.read_text())
+    assert raw_render(game, tmp_path / 'fallback.png', artwork, presentation) == (1200, 1600)
+    assert captured_layout['lines'] == 2
+    assert captured_layout['compact'] and captured_layout['artwork']
+    assert not captured_layout['similar']
+    assert captured_layout['headings'] == ['At a glance', 'Overview', 'Player perspectives']
+    assert 'Similar Games omitted' in caplog.text
+    assert game.model_dump_json() == before
+    assert source.read_bytes() == original
+
+
+def test_similar_games_are_separate_escaped_list_items():
+    from html.parser import HTMLParser
+
+    class LabelReader(HTMLParser):
+        in_list = False
+
+        def __init__(self):
+            super().__init__()
+            self.items = []
+
+        def handle_starttag(self, tag, attrs):
+            if tag == 'ul' and dict(attrs).get('class') == 'similar-games':
+                self.in_list = True
+            elif tag == 'li' and self.in_list:
+                self.items.append('')
+
+        def handle_endtag(self, tag):
+            if tag == 'ul':
+                self.in_list = False
+
+        def handle_data(self, data):
+            if self.in_list and self.items:
+                self.items[-1] += data
+
+    titles = ['A Very Long Related Game Title ' * 4, '日本語の関連作品', '<em>Literal title</em>']
+    labels = LabelReader()
+    html = raw_html(GameMetadata(title='Example', similar_games=titles))
+    labels.feed(html)
+    assert labels.items == titles
+    assert '<em>' not in html
+    assert 'class="similar-games"' not in raw_html(GameMetadata(title='Example'))
+
+
 def test_invalid_artwork(tmp_path):
     with pytest.raises(RenderingError):
         build_html(GameMetadata(title='Title'), tmp_path / 'image.svg')
@@ -176,7 +300,8 @@ def test_compact_retains_artwork(tmp_path, artwork, monkeypatch):
         }'''))
         return capture(self, *args, **kwargs)
     monkeypatch.setattr(Locator, 'screenshot', inspect)
-    game = GameMetadata(title='Long title ' * 35, description='A readable sentence. ' * 65)
+    source = Path(__file__).resolve().parents[1] / 'data/validation-runs/game-research/genshin_impact__2026-10-14T192010-0400__game-research.json'
+    game = GameMetadata.model_validate_json(source.read_text())
     assert render_single_game(game, tmp_path / 'compact.png', artwork) == (1200, 1600)
     assert observed['compact']
     assert observed['loaded']

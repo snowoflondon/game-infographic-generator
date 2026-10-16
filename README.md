@@ -9,8 +9,9 @@ the CLI validates and renders prepared local files.
 The current implementation validates metadata and renders single-game portrait PNGs.
 Personal rankings remain future work.
 
-The current single-game outputs are the POC baseline for further visual refinement.
-See the [current snapshot](current_snapshot__2026-10-15T224736-0400.md) for the latest
+The current single-game iteration is a working POC baseline; its design is being
+left in place for now.
+See the [current snapshot](current_snapshot__2026-10-16T195014-0400.md) for the latest
 review, verification results, and known limitations.
 
 ### Agent skills
@@ -209,7 +210,7 @@ game-infographic-generator single-game \
   data/validation-runs/game-research/yakuza_like_a_dragon__2026-10-14T192010-0400__game-research.json \
   output/yakuza_like_a_dragon.png \
   --artwork assets/artwork/yakuza_like_a_dragon/official_hero.jpg \
-  --presentation data/validation-runs/infographic-design/yakuza_like_a_dragon__2026-10-14T210608-0400__infographic-design.presentation.json
+  --presentation data/validation-runs/infographic-design/baseline/yakuza_like_a_dragon__2026-10-14T210608-0400__infographic-design.presentation.json
 ```
 
 ```json
@@ -224,7 +225,11 @@ Codex condenses the source text; the standalone CLI does not summarize it.
 Use `null` for the overview only when the source description is absent, and `[]`
 for themes only when the corresponding source sentiment list is empty. Artwork mode replaces
 only the overview and sentiment presentation, omitting the long sentiment summary;
-similar games and factual metadata remain. Research JSON is never rewritten. The
+factual metadata remains. Similar Games is retained unless compact mode still
+overflows; only then is that entire section omitted, with a warning. Research
+JSON is never rewritten. Main titles are limited to two lines: colon breaks are
+preferred when they fit, otherwise natural wrapping is used. Titles that cannot
+fit two lines at the compact font size fail explicitly. The
 output is fixed at 1200 × 1600 pixels (3:4). Content that cannot fit after
 spacing adjustments produces an error rather than clipping or truncation.
 Source references and URLs are omitted from the image and retained unchanged
@@ -270,17 +275,56 @@ triggers a typography-only substitute.
 
 ### Example artifacts
 
-`data/validation-runs/game-research/` contains research JSON;
-`data/validation-runs/infographic-design/` contains condensed `.presentation.json`
-sidecars and rendered PNGs. Files are grouped by the workflow stage tested,
-without further game or timestamp subfolders. Validation-run filenames use
+`data/validation-runs/game-research/` contains reusable research JSON.
+Rendering artifacts are grouped by design round:
+
+```text
+data/validation-runs/
+├── game-research/
+└── infographic-design/
+    ├── baseline/
+    │   ├── png/
+    │   └── earlier-iterations/png/
+    ├── 01-title-and-similar-games/png/
+    ├── 02-title-fit-and-overflow/png/
+    └── 03-compact-platforms/png/
+```
+
+The [baseline](data/validation-runs/infographic-design/baseline/README.md)
+preserves accepted PNGs and their presentation inputs; earlier iterations are
+separate. The
+[01-title-and-similar-games](data/validation-runs/infographic-design/01-title-and-similar-games/README.md)
+folder records the first label/title refinements.
+[02-title-fit-and-overflow](data/validation-runs/infographic-design/02-title-fit-and-overflow/README.md)
+records the title-fit fallback policy. Current platform-display comparisons are in
+[03-compact-platforms](data/validation-runs/infographic-design/03-compact-platforms/README.md).
+Platform display groups iOS/Android as Mobile and shares console family prefixes
+(for example, PlayStation 4 & 5); research lists and critic-score platform labels
+remain unchanged.
+Create a new named round for the next
+meaningful design change, with a short README recording its purpose, starting
+commit, and inputs used. No game or timestamp subfolders are needed.
+
+Store only PNG images in each group’s `png/` subfolder; keep presentation JSON,
+validation reports and the group README in the parent folder. Research-only
+folders do not need an empty `png/` directory.
+
+Validation-run filenames use
 `<game_slug>__<timestamp>__<skill-name>.<extension>`. Artwork and its provenance
 remain in `assets/artwork/`; research JSON retains source references that are
 omitted from the infographic.
 
-The saved examples cover Genshin Impact, Stellar Blade, Yakuza: Like a Dragon,
-Clair Obscur: Expedition 33, The Legend of Zelda: Ocarina of Time, and NieR:Automata.
+The saved examples contain 15 research records and 28 PNG iterations, including
+Genshin Impact, Stellar Blade, Yakuza: Like a Dragon, Clair Obscur: Expedition 33,
+The Legend of Zelda: Ocarina of Time, NieR:Automata, Shin Megami Tensei V: Vengeance,
+Zenless Zone Zero, The First Descendant, original Atelier Ryza, Atelier Ryza 3 DX,
+Persona 3 Reload, Honkai: Star Rail, THE FINALS and Crimson Desert.
 Older iterations remain available as references. Some runs include a
 `.validation.md` report; these reports are optional and are not currently required
 by the skills. Research validation checks structure rather than factual truth;
 player perspectives are sampled opinions and similar-game choices are editorial.
+
+Release-date qualifications, artwork crops, layout omissions and source-access
+limitations are documented in the corresponding round reports. Dates follow the
+research skill’s earliest full-release rule across regions; timezone differences
+can yield a local date before the advertised global launch day.

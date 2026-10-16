@@ -1,0 +1,15 @@
+{
+  "source_page_url": "https://www.playstation.com/en-vn/games/atelier-ryza-ever-darkness-and-the-secret-hideout/",
+  "direct_image_url": "https://image.api.playstation.com/vulcan/ap/rnd/202010/0501/zeR0bIx9MQfAJyHcO8BGVzRu.jpg",
+  "retrieved_at": "2026-10-16T19:41:02.410477-04:00",
+  "local_filename": "official_hero.jpg",
+  "dimensions": [
+    3840,
+    2160
+  ],
+  "format": "JPEG",
+  "usage_terms_url": "https://www.playstation.com/en-us/legal/website-terms-of-use/",
+  "usage_notes": "Local personal noncommercial POC test under website personal-use permission; no public redistribution or commercial license asserted; rights retained by owners.",
+  "verification": "Decoded with Pillow and visually inspected against the exact game product page.",
+  "selection_notes": "Official original-game promotional image embedded on the PS4 product page; native 16:9, not DX."
+}

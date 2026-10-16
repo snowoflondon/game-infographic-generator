@@ -4,11 +4,11 @@ Run: 2026-10-15T220607-0400 (America/Toronto).
 
 ## Inputs and outputs
 
-- Research: [metadata](../game-research/nier_automata__2026-10-15T220607-0400__game-research.json).
+- Research: [metadata](../../game-research/nier_automata__2026-10-15T220607-0400__game-research.json).
 - Presentation: [condensed copy](nier_automata__2026-10-15T220607-0400__infographic-design.presentation.json).
-- Result: [1200 × 1600 PNG](nier_automata__2026-10-15T220607-0400__infographic-design.png).
-- Artwork: [official image](../../../assets/artwork/nier_automata/official_promo.jpg).
-- Attribution and terms: [provenance](../../../assets/artwork/nier_automata/official_promo.provenance.json).
+- Result: [1200 × 1600 PNG](png/nier_automata__2026-10-15T220607-0400__infographic-design.png).
+- Artwork: [official image](../../../../assets/artwork/nier_automata/official_promo.jpg).
+- Attribution and terms: [provenance](../../../../assets/artwork/nier_automata/official_promo.provenance.json).
 
 ## Scope and research decisions
 

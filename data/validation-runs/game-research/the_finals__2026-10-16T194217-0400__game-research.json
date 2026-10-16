@@ -1,0 +1,68 @@
+{
+  "title": "THE FINALS",
+  "alternative_titles": [],
+  "developer": "Embark Studios",
+  "publisher": "Embark Studios",
+  "release_date": "2023-12-07",
+  "genres": [
+    "First-person shooter"
+  ],
+  "platforms": [
+    "PC",
+    "PlayStation 5",
+    "Xbox Series X|S"
+  ],
+  "description": "A free-to-play team-based first-person shooter presented as a virtual combat game show, with destructible arenas, distinct contestant builds and objective-driven matches.",
+  "similar_games": [
+    "Battlefield 2042",
+    "Apex Legends"
+  ],
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 80,
+      "max_score": 100,
+      "platform": "PC",
+      "url": "https://www.metacritic.com/game/the-finals/critic-reviews/?platform=pc"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "Sampled PC user reviews praise destruction, movement and creative team tactics, while some criticize balancing, matchmaking and server problems; the sample spans updates and does not establish present service quality.",
+    "positives": [
+      "Dynamic environmental destruction",
+      "Fluid movement and gunplay",
+      "Creative objective-based team tactics"
+    ],
+    "negatives": [
+      "Weapon and gadget balance concerns",
+      "Frustrating matchmaking and solo play for some",
+      "Reported server problems"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Embark launch announcement — December 7 in North America",
+      "url": "https://blog.playstation.com/2023/12/07/the-finals-launches-on-ps5-today/"
+    },
+    {
+      "name": "Steam — PC game and studio",
+      "url": "https://store.steampowered.com/app/2073850/THE_FINALS/"
+    },
+    {
+      "name": "Xbox — developer, publisher and Series X|S",
+      "url": "https://www.xbox.com/en-US/games/store/the-finals/9pgd71cmds0z"
+    },
+    {
+      "name": "Official game page — overview and artwork",
+      "url": "https://www.playstation.com/en-us/games/the-finals/"
+    },
+    {
+      "name": "Metacritic — edition and platform-specific critic score",
+      "url": "https://www.metacritic.com/game/the-finals/critic-reviews/?platform=pc"
+    },
+    {
+      "name": "Metacritic — sampled player reviews",
+      "url": "https://www.metacritic.com/game/the-finals/user-reviews/?platform=pc"
+    }
+  ]
+}

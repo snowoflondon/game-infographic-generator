@@ -1,0 +1,71 @@
+{
+  "title": "Honkai: Star Rail",
+  "alternative_titles": [
+    "崩壞：星穹鐵道"
+  ],
+  "developer": "HoYoverse",
+  "publisher": "COGNOSPHERE",
+  "release_date": "2023-04-25",
+  "genres": [
+    "Turn-based RPG"
+  ],
+  "platforms": [
+    "PC",
+    "iOS",
+    "Android",
+    "PlayStation 5"
+  ],
+  "description": "A free-to-play space-fantasy RPG in which the Trailblazer travels aboard the Astral Express, explores different worlds and builds character teams for turn-based battles.",
+  "similar_games": [
+    "Genshin Impact",
+    "Persona 5 Royal"
+  ],
+  "critic_scores": [
+    {
+      "source": "Metacritic",
+      "score": 80,
+      "max_score": 100,
+      "platform": "PC",
+      "url": "https://www.metacritic.com/game/honkai-star-rail/critic-reviews/?platform=pc"
+    }
+  ],
+  "player_sentiment": {
+    "summary": "Sampled PC user reviews across different updates praise character presentation and strategic team combat, while some criticize gacha pressure, repetition and lengthy dialogue; this is not a current-version consensus.",
+    "positives": [
+      "Strategic turn-based team combat",
+      "Character art and visual presentation",
+      "Music and world-building appeal to some"
+    ],
+    "negatives": [
+      "Gacha spending and resource pressure",
+      "Lengthy dialogue and uneven story pacing",
+      "Repetitive progression for some players"
+    ]
+  },
+  "sources": [
+    {
+      "name": "HoYoverse — version 1.0 went live April 26 at 10:00 UTC+8",
+      "url": "https://hsr.hoyoverse.com/en-us/news/111258"
+    },
+    {
+      "name": "HoYoverse — PC, iOS, Android and PS5 platform announcement",
+      "url": "https://www.hoyoverse.com/en-us/news/123644"
+    },
+    {
+      "name": "Official Chinese-language PlayStation page — original title",
+      "url": "https://www.playstation.com/zh-hant-tw/games/honkai-star-rail/"
+    },
+    {
+      "name": "Official game page — overview and artwork",
+      "url": "https://www.playstation.com/en-us/games/honkai-star-rail/"
+    },
+    {
+      "name": "Metacritic — edition and platform-specific critic score",
+      "url": "https://www.metacritic.com/game/honkai-star-rail/critic-reviews/?platform=pc"
+    },
+    {
+      "name": "Metacritic — sampled player reviews",
+      "url": "https://www.metacritic.com/game/honkai-star-rail/user-reviews/?platform=pc"
+    }
+  ]
+}

@@ -25,8 +25,10 @@ and renders it. Personal rankings are future work and are not implemented.
 - Follow [infographic-design](skills/infographic-design/SKILL.md) for rendering.
   Preserve the 1200 × 1600 canvas and original research JSON. Artwork is optional;
   artwork mode requires a local image and separate condensed presentation JSON.
-  Requested artwork must remain present through normal and compact layouts;
-  fail if content cannot fit, preserving any existing output PNG.
+  Limit main titles to two lines without truncation. Requested artwork must
+  remain present through normal and compact layouts; omit only Similar Games
+  as the final compact fallback, then fail if content still cannot fit,
+  preserving any existing output PNG.
 - Keep modules small and testable, and external API integrations modular.
 - Add type hints to public functions.
 - Prefer existing dependencies and the standard library. Ask before adding

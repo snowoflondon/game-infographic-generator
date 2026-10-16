@@ -62,8 +62,9 @@ runtime is an implementation detail, not a separate application stack.
 - Use a fixed 1200 × 1600 CSS-pixel canvas with a 3:4 portrait ratio. Do not
   expand the canvas, clip content, or introduce scroll containers. Wrap long
   titles and text without horizontal overflow. Fit content through layout and
-  spacing adjustments while keeping text readable; if all content cannot fit,
-  report the limitation rather than silently truncating or rewriting metadata.
+  spacing adjustments while keeping text readable. Only Similar Games may be
+  omitted as the final compact-layout fallback; otherwise report overflow
+  rather than truncating or rewriting metadata.
 - Use this section order, omitting unavailable content:
   1. Header: dominant game title, alternative titles beneath it, and release year
      plus primary genre when available. Derive the year from `release_date`;
@@ -79,8 +80,16 @@ runtime is an implementation detail, not a separate application stack.
   6. Player sentiment: summary and positive/negative themes in balanced columns
      in subtle contrasting neutral panels, with equal column widths. Preserve qualifications and
      never imply that sampled opinions are a consensus.
-  7. Similar games: a compact, readable list.
+  7. Similar games: individual subtle neutral labels in a wrapping list, without
+     slash separators. Wrap between labels and within titles wider than the
+     available space; preserve every supplied title without truncation when
+     the section is displayed.
   8. Footer: minimal project branding.
+- Compact only the metadata platform display: keep PC, group supplied iOS and/or
+  Android as Mobile, and share console family prefixes (for example, PlayStation
+  4 & 5, Xbox One & Series X|S, Nintendo Switch & Switch 2). Preserve distinct
+  generations, first-occurrence order and unknown names; never infer releases.
+  Keep the research platform list and platform-specific critic labels unchanged.
 - Omit sources entirely from the infographic: no sources section, reference
   notes, citation markers, or source URLs, including critic review links. Keep
   critic aggregator names and platforms as score labels. Retain all source data
@@ -93,6 +102,12 @@ runtime is an implementation detail, not a separate application stack.
   overall element even when scores use larger numerals. Set alternative titles
   below it at a subordinate but comfortably readable size. Keep line heights
   and letter spacing consistent by text role, adapting for multilingual scripts.
+- Main titles must occupy at most two lines. Keep one line when it fits; prefer
+  a break after a colon (including `：`) only when it produces at most two lines.
+  Otherwise use natural word/script wrapping across the whole title. Measure
+  after font loading and again for compact mode. Preserve the full title and
+  readable sizes; never clamp, clip, ellipsize, or shrink below the compact size
+  to force success. Fail explicitly if natural wrapping still exceeds two lines.
 - Organize content through generous whitespace, consistent alignment, and
   spacing. Prioritize clarity, hierarchy, and readability over information
   density. Balance sections within the fixed canvas rather than crowding them
@@ -112,14 +127,16 @@ runtime is an implementation detail, not a separate application stack.
   critic score card backgrounds, and a restrained decorative rule. Choose dark
   or light card text with at least 4.5:1 contrast against the accent. Keep the
   main title and body text neutral. No manual accent CLI option is provided.
-- Default mode renders full metadata, excluding sources, without artwork. Artwork
+- Default mode renders full metadata, excluding sources and subject to the final
+  Similar Games fallback, without artwork. Artwork
   is opt-in through `--artwork`; use a fixed fallback accent when absent.
 - Artwork mode requires an image and a separate `--presentation` JSON containing
   `overview` (one sentence or null), `highlights` and `criticisms` (short phrase
   arrays). Codex derives faithful condensed copy from the original description
   and positive/negative sentiment themes. Preserve uncertainty and mixed opinions;
   omit the long sentiment summary but label these as sampled player opinions.
-  Keep similar games and all other factual fields. Never edit the research JSON
+  Keep all other factual fields; Similar Games follows the final fallback below.
+  Never edit the research JSON
   or use string truncation as semantic summarization. Standalone CLI callers
   supply their own condensed copy; Python validates structure, not faithfulness.
 - Artwork mode uses a full-width 16:9 hero beneath the title in both normal and
@@ -127,11 +144,12 @@ runtime is an implementation detail, not a separate application stack.
   dimensions must never expand it. Fit the source proportionally with
   `object-fit: cover` and a deliberate focal position (center by default);
   never stretch or distort the image.
-  Preserve all existing display content and readable typography without further
-  condensation or removal. Compact mode reduces spacing, not hero prominence.
-  Try normal layout
-  then compact with the full-width 16:9 hero retained; fail explicitly if neither fits. Never
-  drop requested artwork or truncate content to force a successful export.
+  Preserve readable typography and content without further condensation.
+  Try normal layout, then compact, then compact with only the entire Similar
+  Games section omitted. Retain the full-width 16:9 hero throughout. Report any
+  omission and preserve the input model and JSON. If the last attempt still
+  overflows or the title exceeds two lines, fail explicitly. Never remove any
+  other section or requested artwork, or truncate content to force success.
 - Omit absent optional values and empty sections, including headings, dividers,
   or labels that would otherwise stand alone. Handle a title-only model cleanly.
   Do not display literal `None`/`null`, fabricated filler, or empty score cards.
@@ -188,6 +206,11 @@ itself trigger discovery.
 - Test template output with complete metadata, title-only metadata, partially
   populated nested objects, long text, Unicode alternative titles, and HTML-like
   text. Check meaningful behavior such as escaping and omitted empty sections.
+  Include colon-separated titles and long similar-game labels; verify natural
+  title breaks and label wrapping visually when exercising browser rendering.
+  Cover colon-to-natural wrapping fallback, the two-line title limit, retention
+  of Similar Games when it fits, its omission only as the last resort, and
+  unchanged metadata and output preservation when all attempts fail.
 - Test validation failure before rendering and preserve existing CLI tests.
 - Add a Chromium integration test that generates a real PNG in a temporary
   directory and checks the PNG format, exact 1200 × 1600 dimensions, and absence
@@ -214,6 +237,16 @@ itself trigger discovery.
   functionality from the future rankings workflow.
 
 ## Completion Report
+
+For repository validation examples, preserve accepted images in
+`data/validation-runs/infographic-design/baseline/` and save new PNGs, presentation
+copy, and any optional reports in the current named design-round folder
+(`03-compact-platforms/` for the present refinements). Put PNGs in the round’s
+`png/` subfolder, keeping presentation JSON, reports and README in the parent.
+Retain game, timestamp,
+and skill in filenames. Reuse research JSON from `data/validation-runs/game-research/`
+and artwork from `assets/artwork/`; record input paths and starting commit in the
+round's README. Create another named round only for a meaningful design change.
 
 Report changed files, the implemented render command, output path and dimensions,
 tests run/results, visual inspection findings, and any limitations or setup steps
