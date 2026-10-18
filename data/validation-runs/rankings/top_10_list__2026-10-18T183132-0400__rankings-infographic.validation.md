@@ -1,7 +1,7 @@
 # Top 10 List. — rankings validation
 
 - Manifest: [top_10_list__2026-10-18T183132-0400__rankings-infographic.json](top_10_list__2026-10-18T183132-0400__rankings-infographic.json)
-- Output: [PNG](png/top_10_list__2026-10-18T183132-0400__rankings-infographic.png), 1200 × 1600.
+- The original PNG is no longer present. The preserved [Brian’s Top 10. revision](png/brians_top_10__2026-10-18T183405-0400__rankings-infographic.png) is 1200 × 1600 and uses the same games, artwork and crops with a changed heading.
 - Used the current light editorial layout: ten equal rounded artwork cards, 6px gaps, bottom-left white titles, and existing gradients. No renderer, schema, skill or research JSON changes.
 - Preserved the supplied order exactly. Rankings uses lightweight official title/edition checks, not full game-research.
 
