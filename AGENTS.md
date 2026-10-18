@@ -5,7 +5,8 @@
 Build a Python application that validates researched game metadata and generates
 single-game portrait PNGs. Research is agent-driven through
 [game-research](skills/game-research/SKILL.md); the Python CLI validates local JSON
-and renders it. Personal rankings are future work and are not implemented.
+and renders it. A first-pass personal top-ten rankings workflow uses checked game titles and
+artwork paths in a separate manifest; it does not require game research metadata.
 
 ## Tech stack
 
@@ -29,6 +30,11 @@ and renders it. Personal rankings are future work and are not implemented.
   remain present through normal and compact layouts; omit only Similar Games
   as the final compact fallback, then fail if content still cannot fit,
   preserving any existing output PNG.
+- Follow [rankings-infographic](skills/rankings-infographic/SKILL.md) for personal
+  rankings: preserve the user’s order, require exactly ten equal artwork stripes,
+  and keep ranking input separate from GameMetadata. Check titles/editions lightly,
+  omit alternative titles, and do not run game-research for rankings. Never infer
+  ranking order.
 - Keep modules small and testable, and external API integrations modular.
 - Add type hints to public functions.
 - Prefer existing dependencies and the standard library. Ask before adding

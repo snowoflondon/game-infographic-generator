@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><style>{{ stylesheet | safe }}</style></head>
+<body><main>
+{% macro title_text(value) -%}
+{% set separator = ':' if ':' in value else '：' %}{% set parts = value.split(separator, 1) %}
+{%- if parts | length == 2 and parts[0].strip() and parts[1].strip() -%}<span class="title-part">{{ parts[0] }}{{ separator }}</span>{{ ' ' if parts[1][:1].isspace() else '' }}<wbr><span class="title-part">{{ parts[1].lstrip() }}</span>{%- else -%}{{ value }}{%- endif -%}
+{%- endmacro %}
+<header><p class="eyebrow">Personal rankings</p><h1>{{ title_text(title) }}</h1></header>
+<ol class="rankings">
+{% for row in rows %}<li class="ranking-row">
+<img src="{{ row.artwork }}" alt="Artwork for {{ row.title }}" style="object-position: {{ row.focal.x }}% {{ row.focal.y }}%">
+<div class="shade" aria-hidden="true"></div>
+
+<div class="row-copy"><h2>{{ title_text(row.title) }}</h2>
+</div>
+</li>{% endfor %}
+</ol><footer>Game Infographic Generator</footer>
+</main></body></html>

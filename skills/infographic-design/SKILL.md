@@ -161,33 +161,10 @@ runtime is an implementation detail, not a separate application stack.
 
 ## Artwork Discovery
 
-Artwork discovery is required only when the user requests artwork. If the user supplies an approved image, inspect and verify that asset
-instead of searching for a replacement. Drafting or editing this skill does not
-itself trigger discovery.
-
-1. Confirm the exact game and edition from the input metadata.
-2. Search for official promotional artwork, preferring developer/publisher
-   media assets, then official cover artwork, then official gameplay screenshots.
-   Open the source page and verify the image belongs to the specified edition;
-   never invent URLs or rely on search thumbnails alone.
-3. Select a high-resolution image suitable for the designated artwork region,
-   preferably with room for controlled cropping. Avoid watermarks, unrelated
-   imagery, and fan art without appropriate permission. Check the actual image
-   for quality, proportions, and important subjects before selecting it.
-4. Inspect any published usage terms. Official availability or appearance in
-   search results does not establish permission to reuse an image. If the
-   intended use is unclear or restricted, report the permission blocker rather than claiming reuse is authorized.
-5. Download suitable, permitted artwork to `assets/artwork/<game_slug>/` in a
-   renderer-supported format. Record the source page URL, direct image URL,
-   retrieval date, local filename, and known usage terms or permission evidence
-   in a sidecar provenance file. Keep this separate from the research JSON;
-   do not add unsupported metadata fields or place provenance on the infographic.
-6. Validate the downloaded file: check its format, decode it, verify positive
-   dimensions, and visually confirm quality and the exact game/edition before
-   rendering. A filename extension alone is not validation. Pass the local path
-   through optional `--artwork` (which makes inclusion mandatory for that run). If discovery, permission,
-   download, or decoding fails, report failure; do not generate a typography-only
-   substitute for a requested artwork run. Missing requested artwork must fail before Chromium launches.
+When artwork is requested, follow the shared
+[artwork discovery procedure](../references/artwork-discovery.md).
+Pass the verified local image through `--artwork`; this makes inclusion mandatory
+for that run. Drafting or editing the skill does not trigger discovery.
 
 ## PNG Capture
 

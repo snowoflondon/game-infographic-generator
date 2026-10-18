@@ -21,9 +21,33 @@ def main(argv: Optional[list[str]] = None) -> int:
     single.add_argument("output", type=Path)
     single.add_argument("--artwork", type=Path, help="Approved local PNG, JPEG or WebP")
     single.add_argument("--presentation", type=Path, help="Condensed presentation JSON required with --artwork")
+    rankings = commands.add_parser("rankings", help="Render exactly ten personal rankings")
+    rankings.add_argument("path", type=Path, help="Rankings manifest JSON")
+    rankings.add_argument("output", type=Path)
+    rankings.add_argument("--check", action="store_true", help="Validate manifest and local inputs without launching Chromium or exporting")
     args = parser.parse_args(argv)
     if args.command is None:
         print("Game Infographic Agent ready")
+        return 0
+    if args.command == "rankings":
+        from .rankings_models import RankingsInput
+        from .rendering.rankings import RankingsRenderingError, build_rankings_html, input_paths, render_rankings
+
+        try:
+            ranking = RankingsInput.model_validate_json(args.path.read_text(encoding="utf-8"))
+            if args.output.suffix.lower() != ".png":
+                raise RankingsRenderingError("Output path must end in .png")
+            if args.output.resolve() in {args.path.resolve(), *input_paths(ranking, args.path.resolve().parent)}:
+                raise RankingsRenderingError("Output must not overwrite rankings inputs")
+            if args.check:
+                build_rankings_html(ranking, args.path.resolve().parent)
+                print(f"Valid rankings and local inputs: {args.path}; no PNG exported")
+            else:
+                width, height = render_rankings(ranking, args.output, args.path.resolve().parent)
+                print(f"Saved {args.output} ({width} x {height} pixels)")
+        except (OSError, UnicodeError, ValidationError, RankingsRenderingError) as exc:
+            print(f"Rankings failed: {exc}", file=sys.stderr)
+            return 1
         return 0
     try:
         metadata = GameMetadata.model_validate_json(args.path.read_text(encoding="utf-8"))

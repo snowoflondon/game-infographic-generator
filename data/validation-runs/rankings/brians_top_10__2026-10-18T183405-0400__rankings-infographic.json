@@ -1,0 +1,85 @@
+{
+  "title": "Brian's Top 10.",
+  "games": [
+    {
+      "title": "Final Fantasy VII Rebirth",
+      "artwork_path": "../../../assets/artwork/final_fantasy_vii_rebirth/official_rankings_artwork.jpg",
+      "artwork_focal_point": {
+        "x": 50,
+        "y": 14
+      }
+    },
+    {
+      "title": "Persona 5 Royal",
+      "artwork_path": "../../../assets/artwork/persona_5_royal/official_rankings_artwork.jpg",
+      "artwork_focal_point": {
+        "x": 50,
+        "y": 27
+      }
+    },
+    {
+      "title": "Yakuza 0 Director's Cut",
+      "artwork_path": "../../../assets/artwork/yakuza_0_directors_cut/official_rankings_artwork.jpg",
+      "artwork_focal_point": {
+        "x": 50,
+        "y": 5
+      }
+    },
+    {
+      "title": "NieR: Automata",
+      "artwork_path": "../../../assets/artwork/nier_automata/official_promo.jpg",
+      "artwork_focal_point": {
+        "x": 50,
+        "y": 85
+      }
+    },
+    {
+      "title": "Persona 3 Reload",
+      "artwork_path": "../../../assets/artwork/persona_3_reload/official_rankings_cover.png",
+      "artwork_focal_point": {
+        "x": 50,
+        "y": 36
+      }
+    },
+    {
+      "title": "Metaphor: ReFantazio",
+      "artwork_path": "../../../assets/artwork/metaphor_refantazio/official_rankings_artwork.jpg",
+      "artwork_focal_point": {
+        "x": 50,
+        "y": 7
+      }
+    },
+    {
+      "title": "Final Fantasy VII Remake",
+      "artwork_path": "../../../assets/artwork/final_fantasy_vii_remake/official_rankings_artwork.jpg",
+      "artwork_focal_point": {
+        "x": 50,
+        "y": 32
+      }
+    },
+    {
+      "title": "Trails in the Sky 1st Chapter",
+      "artwork_path": "../../../assets/artwork/trails_in_the_sky_1st_chapter/official_rankings_artwork.jpg",
+      "artwork_focal_point": {
+        "x": 50,
+        "y": 31
+      }
+    },
+    {
+      "title": "Yakuza Kiwami 2",
+      "artwork_path": "../../../assets/artwork/yakuza_kiwami_2/official_rankings_artwork.jpg",
+      "artwork_focal_point": {
+        "x": 50,
+        "y": 24
+      }
+    },
+    {
+      "title": "NieR Replicant ver.1.22474487139…",
+      "artwork_path": "../../../assets/artwork/nier_replicant_ver_1_22474487139/official_rankings_artwork.jpg",
+      "artwork_focal_point": {
+        "x": 50,
+        "y": 39
+      }
+    }
+  ]
+}

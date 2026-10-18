@@ -7,7 +7,8 @@ the CLI validates and renders prepared local files.
 ## Workflows and architecture
 
 The current implementation validates metadata and renders single-game portrait PNGs.
-Personal rankings remain future work.
+A first-pass personal top-ten rankings workflow is also implemented; its visual
+output has not yet been generated or reviewed.
 
 The current single-game iteration is a working POC baseline; its design is being
 left in place for now.
@@ -22,7 +23,8 @@ review, verification results, and known limitations.
 | [change-planner](skills/change-planner/SKILL.md) | Read-only change and impact investigation |
 | [architecture-visualizer](skills/architecture-visualizer/SKILL.md) | Read-only architectural investigation with Mermaid output |
 | [game-research](skills/game-research/SKILL.md) | Source-backed metadata research and validation |
-| [infographic-design](skills/infographic-design/SKILL.md) | Rendering guidance, artwork discovery, and visual checks |
+| [infographic-design](skills/infographic-design/SKILL.md) | Single-game rendering, artwork discovery, and visual checks |
+| [rankings-infographic](skills/rankings-infographic/SKILL.md) | Personal top-ten title checks and artwork-stripe rendering |
 
 Invoke a helper by asking, for example, “Use architecture-visualizer to diagram
 this repository.” The investigative helpers work independently and return their
@@ -48,23 +50,74 @@ The CLI loads and validates the
 JSON before passing the model to the renderer. The renderer owns presentation;
 it does not research games or change metadata. PNG export uses Python, Jinja2, HTML/CSS, and Playwright Chromium.
 
-### Personal rankings infographic (future)
+### Personal rankings infographic (first pass)
 
-```text
-Ordered game titles → separate RankingsInput validation
-                    → minimal rankings renderer
+Supply a heading and exactly ten games in your personal order, starting with #1.
+Codex checks each supplied title against an official game page or storefront,
+correcting clear spelling/incomplete-title issues and reporting corrections. It
+asks about ambiguous games or editions, then discovers verified artwork. These
+checks can share the same source lookup. Rankings does not run `game-research`,
+require GameMetadata JSON or use alternative titles. The Python CLI performs no
+online title verification, research or downloads.
+
+The separate rankings manifest has a nonblank `title` and a `games` array of
+exactly ten objects, each containing nonblank `title` and `artwork_path` strings.
+Paths resolve relative to the manifest, independently of your shell directory.
+Array order is authoritative; no sorting, inferred rankings or explicit rank
+fields are supported. Unexpected fields are rejected.
+
+For example, one entry in the ten-entry array looks like this:
+
+```json
+{
+  "title": "Persona 3 Reload",
+  "artwork_path": "../../../assets/artwork/game/official_hero.jpg"
+}
 ```
 
-The input order represents the user's personal ranking and must be preserved;
-positions come directly from that order. The initial implementation will need
-no LLM research and will not require full `GameMetadata` records.
+Use `rankings_models.py` for manifest validation and `rendering/rankings.py` with
+independent `rankings.html.j2` / `rankings.css` templates. The existing dependencies
+and packaged template configuration cover both workflows; no new installation step.
 
-When this workflow is implemented, add `rankings_models.py` for its Pydantic
-input model and `rendering/rankings.py` for its independent layout. Extract
-common utilities into `rendering/common.py` only when both renderers need them,
-for example text wrapping, font loading, colors, or export. Prefer plain
-functions; introduce abstractions only when actual duplication warrants them.
-Rankings models, commands, and rendering modules are not implemented yet.
+```sh
+# Validate the manifest and local images; no browser or PNG:
+game-infographic-generator rankings path/to/manifest.json output/rankings.png --check
+
+# Export only when generation is wanted:
+game-infographic-generator rankings path/to/manifest.json output/rankings.png
+```
+
+These command paths are illustrative; saved rankings manifests and previews are
+indexed in [rankings validation runs](data/validation-runs/rankings/README.md). `--check` does not assess browser layout, crop suitability, semantic
+accuracy or permissions. Normal rendering checks browser layout before capture.
+
+The fixed 1200 × 1600 canvas matches the single-game 3:4 ratio. Ten equal-height
+full-width artwork stripes fill the space between the heading and footer, with
+#1 at the top and checked game titles in the bottom-left corner of each stripe.
+No rank numbers are displayed. Alternative titles
+are neither accepted in the manifest nor displayed.
+Artwork is cropped proportionally with a consistent left-to-right dark gradient
+that fades away over the right side. Titles occupy only the left half. The heading
+preserves the user’s casing. The light editorial palette and 48px outer margins
+unify header, artwork frame and footer; 6px off-white gaps separate equal-height cards with 8px rounded corners.
+Artwork and gradients are clipped together; cards have no border or shadow. Each entry may supply
+`"artwork_focal_point": {"x": 50, "y": 25}` (0–100 percentages, default center)
+to adjust its crop, prioritizing character faces. Both the heading
+and main game titles follow the single-game two-line policy: prefer a colon
+break when it fits, otherwise use natural wrapping; unresolved overflow fails
+explicitly without shrinking or truncating titles. No row,
+title is silently omitted. Existing output is preserved on failure.
+
+Shallow stripes need a different crop from a single-game 16:9 hero. Codex follows
+shared [artwork guidance](skills/references/artwork-discovery.md) and checks the
+final image when generation is authorized. Local fonts affect fit. Input/template and DOM-only layout tests cover this workflow; real PNG exports
+and crop inspections are recorded with the saved examples. Shallow crops still
+require visual judgment even with per-game focal controls.
+
+Save rankings manifests and optional reports in `data/validation-runs/rankings/`,
+PNGs in its `png/` subfolder, and reuse the shared artwork location. Record title
+verification URLs in artwork provenance or optional reports. Neither research
+metadata files nor condensed presentation JSON are needed for rankings.
 
 ## Setup
 
@@ -105,7 +158,7 @@ To check Python dependency consistency:
 python -m pip check
 ```
 
-The `single-game` command renders PNGs; `rankings` is not implemented.
+The `single-game` and `rankings` commands render PNGs; rankings also offers `--check`.
 
 ## Run
 

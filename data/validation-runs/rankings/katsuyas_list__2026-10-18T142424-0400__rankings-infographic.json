@@ -1,0 +1,45 @@
+{
+  "title": "Katsuya's List",
+  "games": [
+    {
+      "title": "Zenless Zone Zero",
+      "artwork_path": "../../../assets/artwork/zenless_zone_zero/official_hero.jpg"
+    },
+    {
+      "title": "Honkai: Star Rail",
+      "artwork_path": "../../../assets/artwork/honkai_star_rail/official_hero.jpg"
+    },
+    {
+      "title": "Genshin Impact",
+      "artwork_path": "../../../assets/artwork/genshin_impact/official_launch.jpg"
+    },
+    {
+      "title": "Stellar Blade",
+      "artwork_path": "../../../assets/artwork/stellar_blade/official_hero.jpg"
+    },
+    {
+      "title": "NieR: Automata",
+      "artwork_path": "../../../assets/artwork/nier_automata/official_promo.jpg"
+    },
+    {
+      "title": "Clair Obscur: Expedition 33",
+      "artwork_path": "../../../assets/artwork/clair_obscur_expedition_33/official_hero.jpg"
+    },
+    {
+      "title": "Persona 3 Reload",
+      "artwork_path": "../../../assets/artwork/persona_3_reload/official_screenshot.jpg"
+    },
+    {
+      "title": "Atelier Ryza: Ever Darkness & the Secret Hideout",
+      "artwork_path": "../../../assets/artwork/atelier_ryza/official_hero.jpg"
+    },
+    {
+      "title": "Crimson Desert",
+      "artwork_path": "../../../assets/artwork/crimson_desert/official_hero.jpg"
+    },
+    {
+      "title": "The First Descendant",
+      "artwork_path": "../../../assets/artwork/the_first_descendant/official_hero.jpg"
+    }
+  ]
+}
