@@ -87,3 +87,8 @@ advertised dates are February 2 and April 26 respectively. HoYoverse’s dynamic
 news bodies could not be extracted by the page reader, so indexed official text
 was used for those launch/platform claims and this evidence limitation is
 recorded in the Honkai report. No schema or date policy changes were made.
+
+## Artwork-selection comparison — November 7, 2026
+
+Moved to [04-official-artwork](../04-official-artwork/README.md), including
+PNGs, presentation inputs and validation reports.

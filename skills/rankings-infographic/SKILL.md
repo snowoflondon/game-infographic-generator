@@ -24,7 +24,7 @@ Draft/review requests do not authorize research, downloads or infographic export
    look up alternative titles. Existing records may help identify a game but
    are never required. Record verification URLs in artwork provenance or an
    optional report, outside the manifest.
-3. Follow [artwork discovery](../references/artwork-discovery.md) for every
+3. Use [game-asset-research](../game-asset-research/SKILL.md) for every
    game. Artwork is required. Select for shallow horizontal stripes and check
    that central subjects survive cropping; a good 16:9 hero may be unsuitable.
 4. Create a separate manifest containing a nonblank `title` and `games`, an

@@ -20,7 +20,8 @@ review, verification results, and known limitations.
 | Skill | Purpose |
 | --- | --- |
 | [game-research](skills/game-research/SKILL.md) | Source-backed metadata research and validation |
-| [infographic-design](skills/infographic-design/SKILL.md) | Single-game rendering, artwork discovery, and visual checks |
+| [game-asset-research](skills/game-asset-research/SKILL.md) | Independent artwork discovery, download, and provenance |
+| [infographic-design](skills/infographic-design/SKILL.md) | Single-game rendering and visual checks |
 | [rankings-infographic](skills/rankings-infographic/SKILL.md) | Personal top-ten title checks and artwork-stripe rendering |
 
 ### Single-game infographic
@@ -102,7 +103,7 @@ explicitly without shrinking or truncating titles. No row,
 title is silently omitted. Existing output is preserved on failure.
 
 Shallow stripes need a different crop from a single-game 16:9 hero. Codex follows
-shared [artwork guidance](skills/references/artwork-discovery.md) and checks the
+[game-asset-research](skills/game-asset-research/SKILL.md) and checks the
 final image when generation is authorized. Local fonts affect fit. Input/template and DOM-only layout tests cover this workflow; real PNG exports
 and crop inspections are recorded with the saved examples. Shallow crops still
 require visual judgment even with per-game focal controls.
@@ -302,12 +303,13 @@ text, and does not emit source reference links.
 
 ### Codex discovery vs. standalone CLI
 
-When Codex follows [infographic-design](skills/infographic-design/SKILL.md), it discovers
-and verifies requested artwork for the exact game/edition (or inspects the
+Codex uses [game-asset-research](skills/game-asset-research/SKILL.md) to discover
+and verify requested artwork for the exact game/edition (or inspects the
 approved image you supply). It prefers
-official promotional assets, then official covers, then official screenshots,
+official promotional artwork or covers, excluding fan art and in-game screenshots,
 checks suitability and usage terms, and stores the local image and provenance in
-`assets/artwork/<game_slug>/`. It prepares separate condensed presentation copy,
+`assets/artwork/<game_slug>/`. The [infographic-design](skills/infographic-design/SKILL.md)
+workflow then prepares separate condensed presentation copy,
 then invokes the CLI with `--artwork` and `--presentation`.
 
 The standalone Python CLI only validates metadata, reads any requested local

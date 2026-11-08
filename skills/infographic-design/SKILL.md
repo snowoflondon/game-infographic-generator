@@ -13,7 +13,7 @@ the pipeline. Implement only when the user requests implementation.
 
 - Preserve the existing research skill, JSON contract, Pydantic models, and
   validation workflow. Rendering must not research or rewrite game metadata;
-  the agent may discover artwork through the separate procedure below.
+  the agent uses game-asset-research separately when artwork is requested.
 - No hardcoded game metadata in this skill, renderer, templates, or styles.
   Game-specific values come exclusively from the supplied metadata. Existing
   fixtures may be used as test input, never as rendering defaults.
@@ -161,8 +161,8 @@ runtime is an implementation detail, not a separate application stack.
 
 ## Artwork Discovery
 
-When artwork is requested, follow the shared
-[artwork discovery procedure](../references/artwork-discovery.md).
+When artwork is requested, use
+[game-asset-research](../game-asset-research/SKILL.md) to obtain or verify it.
 Pass the verified local image through `--artwork`; this makes inclusion mandatory
 for that run. Drafting or editing the skill does not trigger discovery.
 

@@ -1,14 +1,18 @@
 # Artwork discovery for game infographics
 
+Shared procedure owned by [game-asset-research](../game-asset-research/SKILL.md).
+
 1. Confirm the exact title and edition: use validated GameMetadata for single-game
    mode, or the checked supplied title for rankings. Inspect an
    approved supplied image instead of searching for a replacement.
-2. Prefer official developer/publisher promotional assets, then official cover
-   art, then official screenshots. Open the source page and actual image;
+2. Use only official developer/publisher promotional artwork or cover art.
+   Exclude fan art, in-game screenshots and artwork containing the game title
+   or title logo, including officially published versions.
+   Open the source page and actual image;
    verify edition and quality. Never invent URLs or rely on search thumbnails.
-3. Choose high-resolution compositions suitable for the target crop. Preserve
-   proportions and important subjects; avoid unrelated placeholders, watermarks
-   and fan art without appropriate permission. Inspect the final crop.
+3. Apply the selection criteria in game-asset-research. Preserve proportions
+   and important subjects; avoid unrelated placeholders and watermarks.
+   Inspect the final crop.
 4. Inspect published usage terms. Official availability is not a reuse license.
    Record known permissions and restrictions; report a permission blocker when
    intended use is unclear or restricted rather than claiming authorization.

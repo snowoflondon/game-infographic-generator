@@ -1,0 +1,35 @@
+{
+  "game": "Persona 3 Reload",
+  "edition": "Base game, 2024",
+  "asset_type": "official promotional illustration",
+  "source_page_url": "https://www.playstation.com/en-us/games/persona-3-reload/",
+  "direct_image_url": "https://image.api.playstation.com/vulcan/ap/rnd/202307/2605/7b70e463bf05b20fbf99f8bf81956aa805969da98d9dcde8.jpg",
+  "retrieved_at": "2026-11-07T20:35:20.681279-05:00",
+  "local_filename": "wide_store__2026-11-07T203520-0500__game-asset-research.jpg",
+  "format": "JPEG",
+  "dimensions": [
+    3840,
+    2160
+  ],
+  "sha256": "b41ae6e4dc05980ce6cca5c3ad9da6d5c1a9e4ed4434e74c6a18058efeda54ba",
+  "target_crop": "16:9 single-game hero, centered",
+  "selection_rationale": "Makoto and his Persona establish identity in the recognizable blue illustrated style. Native 3840x2160 artwork keeps face and logo intact without cropping, unlike the square cover. Logo repeats the infographic title but is embedded official artwork, not a third-party watermark. Previous single-game image is an excluded gameplay screenshot.",
+  "usage_terms_url": "https://www.playstation.com/en-us/legal/website-terms-of-use/",
+  "usage_notes": "Website personal/noncommercial-use terms reviewed for this local validation. No public redistribution or commercial license asserted.",
+  "comparison": {
+    "previous_single_game_asset": "assets/artwork/persona_3_reload/official_screenshot.jpg",
+    "previous_sha256": "68222f0d4ef80cf2d64f8a3f8770ebb3f409bb95a51de3327735774e4e1a9717",
+    "byte_identical": false,
+    "decoded_pixels_identical": false
+  },
+  "alternatives": [
+    {
+      "label": "cover",
+      "direct_image_url": "https://image.api.playstation.com/vulcan/ap/rnd/202307/2601/85487475426de191c3c100b47ddc61f77c515b513948272e.png",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    }
+  ]
+}

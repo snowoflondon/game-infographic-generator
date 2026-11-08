@@ -1,0 +1,35 @@
+{
+  "game": "NieR: Automata",
+  "edition": "Original 2017 game",
+  "asset_type": "official finished concept artwork",
+  "source_page_url": "https://www.platinumgames.com/official-blog/article/9397",
+  "direct_image_url": "https://www.platinumgames.com/official-blog/wp-content/uploads/sites/2/2017/05/NIER_BLOG_ART_A_20170518_09_FULL_1920x966.jpg",
+  "retrieved_at": "2026-11-07T20:35:20.681279-05:00",
+  "local_filename": "finished_concept__2026-11-07T203520-0500__game-asset-research.jpg",
+  "format": "JPEG",
+  "dimensions": [
+    1920,
+    966
+  ],
+  "sha256": "dc30ddcd0c87a8de4f350870c55da249e729c6fbc2d89d13cd91f3b4daee60e8",
+  "target_crop": "16:9 single-game hero, centered",
+  "selection_rationale": "Developer explicitly identifies this as finished concept art of the base game amusement park. Distinctive setting, balanced architecture and eerie lighting establish identity without gameplay screenshot uncertainty. A centered 16:9 frame trims about 5.3% from each horizontal edge, retaining the castle and entrance. No main character portrait; some edge trees are lost. Prior desert-city image is officially published but its artwork-versus-gameplay classification is not established by the checked source, so it is not approved under the stricter rule. The other finished-art candidate is nearly identical and does not improve crop fit.",
+  "usage_terms_url": "https://www.platinumgames.com/terms-of-service/",
+  "usage_notes": "Personal informational viewing/download reviewed; PlatinumGames terms restrict derivative uses. No permission to publish or export a cropped infographic is established by this asset-only test.",
+  "comparison": {
+    "previous_single_game_asset": "assets/artwork/nier_automata/official_promo.jpg",
+    "previous_sha256": "ae950ec26bfc86adff6e28f073f7f64e4708c10fb6357b9884082bd298d9c939",
+    "byte_identical": false,
+    "decoded_pixels_identical": false
+  },
+  "alternatives": [
+    {
+      "label": "concept_alternative",
+      "direct_image_url": "https://www.platinumgames.com/official-blog/wp-content/uploads/sites/2/2017/05/NIER_BLOG_ART_A_20170518_03_FULL_1920x966.jpg",
+      "dimensions": [
+        1920,
+        966
+      ]
+    }
+  ]
+}

@@ -8,7 +8,10 @@ description: Research a user-defined video game using available research tools a
 ## Objective
 
 Given a video game title, research the game and produce a structured JSON file.
-Use this skill when researching game metadata for an infographic.
+Use this skill when researching game metadata for an infographic. This skill
+produces metadata only; it does not search for or download artwork. Use
+[game-asset-research](../game-asset-research/SKILL.md) separately when artwork
+is requested. Artwork and provenance remain outside GameMetadata and research JSON.
 
 ## Schema Development vs. Game Research
 

@@ -1,0 +1,24 @@
+{
+  "game": "NieR: Automata",
+  "edition": "Original 2017 release",
+  "source_page_url": "https://blog.playstation.com/2016/12/22/nier-automata-demo-out-today-on-playstation-store/",
+  "direct_image_url": "https://blog.playstation.com/tachyon/2016/12/Nier.jpg",
+  "retrieved_at": "2026-11-07T20:22:09.240743-05:00",
+  "local_filename": "official_promo__2026-11-07T202209-0500__game-asset-research.jpg",
+  "format": "JPEG",
+  "dimensions": [
+    1280,
+    720
+  ],
+  "sha256": "ae950ec26bfc86adff6e28f073f7f64e4708c10fb6357b9884082bd298d9c939",
+  "usage_terms_url": "https://www.playstation.com/en-us/legal/website-terms-of-use/",
+  "usage_notes": "Local personal noncommercial validation only; no permission for public redistribution or commercial reuse asserted.",
+  "selection_notes": "Compare the accepted original 16:9 promotional landscape, not a new artistic selection. Source is a Square Enix-authored launch-era post.",
+  "comparison": {
+    "previous_file": "assets/artwork/nier_automata/official_promo.jpg",
+    "previous_sha256": "ae950ec26bfc86adff6e28f073f7f64e4708c10fb6357b9884082bd298d9c939",
+    "byte_identical": true,
+    "decoded_pixels_identical": true,
+    "direct_image_found_on_current_source_page": true
+  }
+}

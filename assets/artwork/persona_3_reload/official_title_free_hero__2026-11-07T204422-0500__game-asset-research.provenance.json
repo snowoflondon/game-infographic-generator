@@ -1,0 +1,22 @@
+{
+  "game": "Persona 3 Reload",
+  "edition": "Base game",
+  "asset_type": "Official Steam Points Shop Hero profile illustration",
+  "source_page_url": "https://store.steampowered.com/app/2161700/Persona_3_Reload/",
+  "product_item_url": "https://store.steampowered.com/points/shop/app/2161700/reward/264750/",
+  "direct_image_url": "https://community.fastly.steamstatic.com/economy/profilebackground/items/2161700/05ed1962c04f5fbbca0788664b81725a92e9273c.jpg",
+  "retrieved_at": "2026-11-07T20:44:22.824449-05:00",
+  "local_filename": "official_title_free_hero__2026-11-07T204422-0500__game-asset-research.jpg",
+  "format": "JPEG",
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "sha256": "503fd28bfa88b22b88765e504013d9c05d64e7263152ed135d2b2f45d6c24a87",
+  "target_crop": "16:9 single-game hero; centered; no material crop",
+  "selection_rationale": "Native landscape official game-specific Hero artwork linked in the publisher storefront Points Shop section. Recognizable protagonist and blue butterflies, balanced negative space, no game title/logo, no watermark, no gameplay screenshot. Decorative numeral 3 is not the game title or title logo. Prior branded cover and commemorative release poster rejected; portrait character renders lose important head details in centered landscape cropping; generic moon background provides weaker character identity.",
+  "limitations": "Baked-in dark vignette and cropped close-up are part of the published original; no brightening or image modification applied. No independent public redistribution/commercial reuse permission established.",
+  "usage_terms_url": "https://store.steampowered.com/subscriber_agreement/",
+  "usage_notes": "Downloaded for the user-requested local personal preview; official hosting does not establish a general reuse license.",
+  "verification": "Source HTML labels the official app 2161700 profile-background item as Hero; image decoded and inspected in full at 1920x1080."
+}
