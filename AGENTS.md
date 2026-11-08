@@ -43,11 +43,6 @@ artwork paths in a separate manifest; it does not require game research metadata
 ## Development workflow
 
 - Inspect relevant code and repository instructions before making changes.
-- For onboarding or a current-state investigation, use
-  [repo-understanding](skills/repo-understanding/SKILL.md). For investigating
-  a proposed change and its impact, use
-  [change-planner](skills/change-planner/SKILL.md). Both are read-only; use them
-  when their investigation is useful rather than requiring both for every edit.
 - Keep changes scoped to the request and explain significant architectural
   decisions.
 - Write meaningful tests for new functionality and run relevant tests after

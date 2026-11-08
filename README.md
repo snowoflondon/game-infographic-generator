@@ -19,16 +19,9 @@ review, verification results, and known limitations.
 
 | Skill | Purpose |
 | --- | --- |
-| [repo-understanding](skills/repo-understanding/SKILL.md) | Read-only repository refresher |
-| [change-planner](skills/change-planner/SKILL.md) | Read-only change and impact investigation |
-| [architecture-visualizer](skills/architecture-visualizer/SKILL.md) | Read-only architectural investigation with Mermaid output |
 | [game-research](skills/game-research/SKILL.md) | Source-backed metadata research and validation |
 | [infographic-design](skills/infographic-design/SKILL.md) | Single-game rendering, artwork discovery, and visual checks |
 | [rankings-infographic](skills/rankings-infographic/SKILL.md) | Personal top-ten title checks and artwork-stripe rendering |
-
-Invoke a helper by asking, for example, “Use architecture-visualizer to diagram
-this repository.” The investigative helpers work independently and return their
-findings in the response; saving a report requires an explicit request.
 
 ### Single-game infographic
 
@@ -203,8 +196,7 @@ does not verify facts or URL reachability. Research outputs need verified URLs.
 
 ## Architecture diagram exports (optional)
 
-The `architecture-visualizer` skill returns Mermaid text without requiring a CLI.
-To export that text as SVG, PNG, or PDF, use the official
+To export Mermaid diagrams as SVG, PNG, or PDF, use the official
 [Mermaid CLI](https://github.com/mermaid-js/mermaid-cli). It is optional development
 tooling, declared in `tools/mermaid/package.json` with an npm lockfile;
 it is not a Python virtual-environment package.
